@@ -22,6 +22,9 @@ yarn add react react-dom webpack
 
 # 添加webpack插件
 yarn add html-webpack-plugin
+
+# 添加babel插件
+yarn add babel-preset-react
 ```
 
 
