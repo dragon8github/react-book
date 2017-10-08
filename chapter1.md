@@ -11,5 +11,18 @@ https://codepen.io/gaearon/pen/ZpvBNJ?editors=0010
 https://yarnpkg.com/zh-Hans/
 ```
 
+使用yarn安装必备库
+
+```py
+# 初始化yarn
+yarn init -y
+
+# 添加核心库
+yarn add react react-dom webpack
+
+# 添加webpack插件
+yarn add html-webpack-plugin
+```
+
 
 
