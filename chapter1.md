@@ -134,11 +134,7 @@ npm run dev
 
 ---
 
-github地址
-
-```
-https://github.com/dragon8github/react-study
-```
+github地址： https://github.com/dragon8github/react-study
 
 
 
