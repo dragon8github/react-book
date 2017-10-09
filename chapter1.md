@@ -34,7 +34,14 @@ yarn add babel-preset-react
 yarn add babel-loader babel-core
 ```
 
-添加并且配置webpack.config.js
+创建目录结构
+
+```rust
+$ mkdir src && touch webpack.config.js .babelrc index.html
+$ cd src && touch main.js && mkdir assets
+```
+
+配置webpack.config.js
 
 ```js
 var HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -63,12 +70,27 @@ module.exports = {
 }
 ```
 
-添加并且配置.babelrc
+配置.babelrc
 
 ```js
 {
     "presets": ["react"]
 }
+```
+
+编写index.html代码
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
 ```
 
 
