@@ -1,5 +1,11 @@
 state是实现双向数据绑定的桥梁
 
+> 注意，不要尝试手动修改this.state，必须使用this.setState
+>
+> 错误示范：this.state.comment = 'Hello';
+>
+> 正确示范：this.setState\({ comment: 'Hello' }\);
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
