@@ -17,6 +17,9 @@ http://babeljs.io/docs/setup/#installation
 使用yarn安装必备库
 
 ```py
+# 防止某些fq源的关系，设置淘宝镜像代理
+yarn config set registry https://registry.npm.taobao.org
+
 # 初始化yarn
 yarn init -y
 
