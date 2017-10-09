@@ -44,6 +44,10 @@ $ cd src && touch main.js && mkdir assets
 
 配置webpack.config.js
 
+> 不要认为 Webpack 只适合单页面的构建，
+>
+> 事实上只需要配置好 entry 以及 HtmlWebpackPlugin 即可同事构建多个页面。
+
 ```js
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
@@ -119,8 +123,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
+    <h1>Hello, world!</h1>,
+    document.getElementById('root')
 );
 ```
 
@@ -134,7 +138,5 @@ npm run dev
 
 ---
 
-github地址： https://github.com/dragon8github/react-study
-
-
+github地址： [https://github.com/dragon8github/react-study](https://github.com/dragon8github/react-study)
 
