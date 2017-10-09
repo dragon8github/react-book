@@ -6,11 +6,11 @@
 >
 > ref的作用其实就是获取、操作dom元素
 >
-> 在vue中是为DOM定义一个名字，然后再通过this.$refs.name获取并进一步操作。
+> 在Vue中，是为DOM、标签、组件绑定一个名字，然后再通过this.$refs.name获取该DOM，再进一步操作。
 >
-> 在react中，是采用回调函数的方式获取并操作DOM。
+> 在React中，是采用回调函数的方式获取并操作DOM。
 
-先使用 phpstudy 创建后端测试数据 team.php
+先使用 phpstudy 快速创建后端测试数据 team.php
 
 ```php
 <?php 
