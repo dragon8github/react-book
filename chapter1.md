@@ -26,6 +26,9 @@ yarn init -y
 # 添加核心库
 yarn add react react-dom webpack
 
+# 添加第三方库
+yarn add axios
+
 # 添加webpack插件
 yarn add html-webpack-plugin
 yarn add webpack-dev-server
