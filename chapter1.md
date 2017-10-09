@@ -17,7 +17,7 @@ http://babeljs.io/docs/setup/#installation
 使用yarn安装必备库
 
 ```py
-# 防止某些fq源的关系，设置淘宝镜像代理
+# 为了避免某些国外镜像源安装失败，先设置淘宝镜像代理
 yarn config set registry https://registry.npm.taobao.org
 
 # 初始化yarn
@@ -37,7 +37,7 @@ yarn add babel-loader babel-core
 
 创建目录结构
 
-```rust
+```ruby
 $ mkdir src && touch webpack.config.js .babelrc index.html
 $ cd src && touch main.js && mkdir assets
 ```
@@ -89,7 +89,6 @@ module.exports = {
     "dev": "webpack-dev-server"
   }
 }
-
 ```
 
 编写index.html代码
