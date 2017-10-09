@@ -20,7 +20,7 @@ header('Access-Control-Allow-Origin:*');
 header("content-type:application/json");
 
 $redis = new Redis();
-$redis->connect("127.0.0.1",6379);
+$redis->connect("127.0.0.1", 6379);
 
 function agree ($newsid) {
     global $redis;
