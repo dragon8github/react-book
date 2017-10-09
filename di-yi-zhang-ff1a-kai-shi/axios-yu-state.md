@@ -3,12 +3,14 @@
 > &lt;axios github 地址&gt;： [https://github.com/axios/axios](https://www.gitbook.com/book/dragon8github/react/edit#)
 >
 > &lt;refs 官方文档&gt;：[https://reactjs.org/docs/refs-and-the-dom.html](https://reactjs.org/docs/refs-and-the-dom.html)
->
-> ref的作用其实就是获取、操作dom元素。
->
-> 在Vue中，是为DOM、标签、组件绑定一个名字，然后再通过this.$refs.name获取该DOM，再进一步操作。
->
-> 在React中，是采用回调函数的方式获取并操作DOM。
+
+ref的作用其实就是获取、操作dom元素。
+
+在Vue中，是为DOM、标签、组件绑定一个名字，然后再通过this.$refs.name获取该DOM，再进一步操作。
+
+在React中，是采用回调函数的方式获取并操作DOM。
+
+---
 
 先使用 phpstudy 快速创建 team.php 作为后端测试数据
 
