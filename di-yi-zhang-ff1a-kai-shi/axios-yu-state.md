@@ -80,13 +80,68 @@ ReactDOM.render(
 
 调试流程：
 
-1、判断是hideLoading出错
+1、定位错误在 hideLoading\(\) 中出错。
 
-2、ele.style.display = 'none' 报错。原因是对NULL进行了操作。
+2、ele.style.display = 'none' 报错。原因是对NULL进行了操作。为什么会存在NULL？不是应该两个DOM元素吗？
 
 3、loadingbox 数组中为何有6个成员，并且存在NULL。按照我们的理解应该只有两个成员不是吗？
 
-4、发现是this.setState导致的，如果把this.hideLoading\(\) 放在它之前就不会导致错误
+4、发现是this.setState导致的，如果把this.hideLoading\(\) 放在它之前就不会导致错误。为什么呢？
 
-5、原因是this.setState导致的重新渲染 render\(\) 重新渲染时，分为两次，第一次 ref 的 ele 为NULL。第二次才正常的值。换句话说，整个过程一共渲染了三次，每次添加两个ele。并且第二次为两个为两个NULL，所以数组 lonadingbox一共具有6个成员。
+5、**原因是 this.setState 导致的重新渲染 render\(\) **，并且渲染过程分为两次，第一次 ref 的 ele 为NULL。第二次才正常的DOM对象。
+
+换句话说，整个页面过程一共渲染 render\(\) 了三次，每次添加都往 lonadingbox 中添加了两个ele。其中第二次的两个ele都为NULL，所以数组 lonadingbox一共具有6个成员。
+
+---
+
+知道 this.setState 重新渲染的特性之后。我们将代码改为以下：
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import axios from "axios"
+
+class Team extends React.Component {
+    constructor(props) {
+        super(props)
+        this.loadingbox = []
+        this.state = {
+            leader: "",
+            teammates: []
+        }
+    }
+    componentWillMount() {
+        axios.get("http://localhost:8080/team.php").then((res) => {
+            // 当使用之后，界面会被重新渲染，但为什么会渲染三次，且中间一次是null呢？
+            this.setState({
+                leader: res.data.leader,
+                teammates: res.data.teammates
+            })
+        })
+    }
+    render() {
+        return <div>
+            <h1> 团队队员 </h1> 
+            <span ref = {(ele) => { if (ele) ele.style.display = this.state.teammates.length === 0 ? 'display' : 'none' }}> 正在加载... </span> 
+            {
+                this.state.teammates.map((item, index) => {
+                    return <h2 key = { index } > { item.name }—— { item.age } </h2>
+                })
+            } 
+            <h1> 项目经理 </h1> 
+            <span ref = {(ele) => { if (ele) ele.style.display = this.state.leader === "" ? 'display' : 'none' }} > 正在加载... </span> 
+            { this.state.leader } 
+            </div>
+    }
+}
+
+ReactDOM.render( 
+    <Team /> ,
+    document.getElementById('root')
+);
+```
+
+
+
+
 
