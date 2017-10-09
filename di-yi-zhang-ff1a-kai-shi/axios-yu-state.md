@@ -61,8 +61,8 @@ class Team extends React.Component {
                     return <h2> { item.name } —— { item.age } </h2>
                 })
             }
-            <h1>项目经理 : </h1>
-            <span ref = {(ele) => {this.loadingbox.push(ele)}}> 正在加载... </span>
+            <h1>项目经理</h1>
+            <span ref = {(ele) => {this.loadingbox.push(ele) }}> 正在加载... </span>
             { this.state.leader }
         </div>
     }
@@ -72,6 +72,7 @@ ReactDOM.render(
     <Team />,
     document.getElementById('root')
 );
+
 ```
 
 
