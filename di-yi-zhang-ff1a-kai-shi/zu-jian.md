@@ -1,4 +1,4 @@
-React 中的组件其实就是ES2015的类，只需要继承 React.Component 即可
+React 中的组件创建其实就是 ES2015 中的类语法，只需要继承 React.Component 即可。
 
 > 注意，组件的首字母必须大写
 
@@ -21,4 +21,8 @@ ReactDOM.render(
 ```
 
 ![](/assets/asdajl.png)
+
+---
+
+
 
