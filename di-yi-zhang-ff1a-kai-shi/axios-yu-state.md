@@ -20,7 +20,7 @@
 ?>
 ```
 
-main.js代码
+main.js 代码
 
 ```js
 import React from 'react'
@@ -74,5 +74,19 @@ ReactDOM.render(
 );
 ```
 
+上面的代码会发现此错误
 
+![](/assets/oriimdmamamsd.png)
+
+调试流程：
+
+1、判断是hideLoading出错
+
+2、ele.style.display = 'none' 报错。原因是对NULL进行了操作。
+
+3、loadingbox 数组中为何有6个成员，并且存在NULL。按照我们的理解应该只有两个成员不是吗？
+
+4、发现是this.setState导致的，如果把this.hideLoading\(\) 放在它之前就不会导致错误
+
+5、原因是this.setState导致的重新渲染 render\(\) 重新渲染时，分为两次，第一次 ref 的 ele 为NULL。第二次才正常的值。换句话说，整个过程一共渲染了三次，每次添加两个ele。并且第二次为两个为两个NULL，所以数组 lonadingbox一共具有6个成员。
 
