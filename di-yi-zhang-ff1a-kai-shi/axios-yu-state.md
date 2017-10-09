@@ -3,8 +3,14 @@
 > &lt;axios github 地址&gt;： [https://github.com/axios/axios](https://www.gitbook.com/book/dragon8github/react/edit#)
 >
 > &lt;refs 官方文档&gt;：[https://reactjs.org/docs/refs-and-the-dom.html](https://reactjs.org/docs/refs-and-the-dom.html)
+>
+> ref的作用其实就是获取、操作dom元素
+>
+> 在vue中是为DOM定义一个名字，然后再通过this.$refs.name获取并进一步操作。
+>
+> 在react中，是采用回调函数的方式获取并操作DOM。
 
-使用 phpstudy 创建后端测试数据 team.php
+先使用 phpstudy 创建后端测试数据 team.php
 
 ```php
 <?php 
@@ -66,7 +72,6 @@ ReactDOM.render(
     <Team />,
     document.getElementById('root')
 );
-
 ```
 
 
