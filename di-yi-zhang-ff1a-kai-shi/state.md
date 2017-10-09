@@ -1,6 +1,6 @@
-state是实现双向数据绑定的桥梁
+state是React中实现双向数据绑定的桥梁
 
-> 注意，不要尝试手动修改this.state，必须使用this.setState
+> 注意，不要尝试手动修改this.state，必须使用this.setState来更新state
 >
 > 错误示范：this.state.comment = 'Hello';
 >
@@ -48,7 +48,7 @@ ReactDOM.render(
 
 > 相关文档：
 >
-> https://reactjs.org/docs/react-component.html
+> [https://reactjs.org/docs/react-component.html](https://reactjs.org/docs/react-component.html)
 
 
 
