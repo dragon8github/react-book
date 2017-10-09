@@ -17,16 +17,16 @@ class Clock extends React.Component {
             date: new Date()
         };
     }
+    tick() {
+        this.setState({
+            date: new Date()
+        });
+    }
     componentWillUnmount() {
         clearInterval(this.timerID);
     }
     componentDidMount() {
         this.timerID = setInterval(() => { this.tick() }, 1000);
-    }
-    tick() {
-        this.setState({
-            date: new Date()
-        });
     }
     render() {
         return (<div>
