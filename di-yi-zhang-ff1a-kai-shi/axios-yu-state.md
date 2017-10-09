@@ -124,11 +124,11 @@ class Team extends React.Component {
             <span ref = {(ele) => { if (ele) ele.style.display = this.state.teammates.length === 0 ? 'display' : 'none' }}> 正在加载... </span> 
             {
                 this.state.teammates.map((item, index) => {
-                    return <h2 key = { index } > { item.name }—— { item.age } </h2>
+                    return <h2 key = { index }> { item.name }—— { item.age } </h2>
                 })
             } 
             <h1> 项目经理 </h1> 
-            <span ref = {(ele) => { if (ele) ele.style.display = this.state.leader === "" ? 'display' : 'none' }} > 正在加载... </span> 
+            <span ref = {(ele) => { if (ele) ele.style.display = this.state.leader === "" ? 'display' : 'none' }}> 正在加载... </span> 
             { this.state.leader } 
         </div>
     }
