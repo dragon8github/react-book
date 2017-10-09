@@ -10,7 +10,7 @@
 >
 > 在React中，是采用回调函数的方式获取并操作DOM。
 
-先使用 phpstudy 快速创建后端测试数据 team.php
+先使用 phpstudy 快速创建 team.php 作为后端测试数据
 
 ```php
 <?php 
@@ -72,7 +72,6 @@ ReactDOM.render(
     <Team />,
     document.getElementById('root')
 );
-
 ```
 
 
