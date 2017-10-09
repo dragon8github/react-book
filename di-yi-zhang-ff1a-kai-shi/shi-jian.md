@@ -1,5 +1,7 @@
 点击事件示例
 
+> 注意，onClick中的方法不需要加\(\)，否则就自动执行showMe\(\)了
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -27,7 +29,6 @@ ReactDOM.render(
     <Me { ...obj } />,
     document.getElementById('root')
 );
-
 ```
 
 ![](/assets/123541245312551assad.png)
