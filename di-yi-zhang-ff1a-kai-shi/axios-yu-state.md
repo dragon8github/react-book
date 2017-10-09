@@ -54,14 +54,9 @@ class Team extends React.Component {
                     return <h2> { item.name } _ { item.age } </h2>
                 })
             }
-            <h1>项目经理 : { this.state.leader } <span ref = {(span) => { this.loadingbox.push(span)}}> 正在加载... </span></h1>
-            <div>
-                <input type = "button" value = "改变" onClick = {() => {
-                    let getState = this.state.teammates
-                    getState[0].name = "王六"
-                    this.forceUpdate()
-                }}/>
-            </div>
+            <h1>项目经理 : </h1>
+            <span ref = {(span) => { this.loadingbox.push(span)}}> 正在加载... </span>
+            { this.state.leader }
         </div>
     }
 }
