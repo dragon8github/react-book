@@ -18,8 +18,7 @@ ReactDOM.render(
     <Me name="Lee" age="24"/>,
     document.getElementById('root')
 );
-
 ```
 
-
+![](/assets/asdajl.png)
 
