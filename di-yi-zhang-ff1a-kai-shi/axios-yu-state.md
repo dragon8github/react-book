@@ -29,33 +29,37 @@ class Team extends React.Component {
             teammates : []            
         }
     }
-    showLoading (isshow) {
-        let display = isshow ? "block" : "none"
-        this.loadingbox.forEach((item) => {
-            item.style.display = display
+    showLoading () {
+         this.loadingbox.forEach((ele) => {
+            ele.style.display = 'block'
+        })
+    }
+    hideLoading () {
+        this.loadingbox.forEach((ele) => {
+            ele.style.display = 'none'
         })
     }
     componentWillMount () {
-        this.showLoading(true)
+        this.showLoading()
         axios.get("http://localhost:8080/team.php").then((res) => {
             this.setState({
                 leader    : res.data.leader,
                 teammates : res.data.teammates
             })
-            this.showLoading(false)
+            this.hideLoading()
         })
     }
     render () {
         return <div>
             <h1>团队队员</h1>
-            <span ref = {(span) => { this.loadingbox.push(span)}}>正在加载...</span>
+            <span ref = {(ele) => {this.loadingbox.push(ele)}}>正在加载...</span>
             {
                 this.state.teammates.map((item) => {
                     return <h2> { item.name } _ { item.age } </h2>
                 })
             }
             <h1>项目经理 : </h1>
-            <span ref = {(span) => { this.loadingbox.push(span)}}> 正在加载... </span>
+            <span ref = {(ele) => {this.loadingbox.push(ele)}}> 正在加载... </span>
             { this.state.leader }
         </div>
     }
