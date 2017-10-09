@@ -98,7 +98,7 @@ ReactDOM.render(
 
 #### 5、**原因是 this.setState 导致的重新渲染 render\(\) ，并且渲染过程分为两次（这可能**和组件的生命周期有关）**，第一次 ref 的 ele 为NULL。第二次才正常的DOM对象。**
 
-换句话说，整个页面过程一共渲染 render\(\) 了三次，每次添加都往 lonadingbox 中添加了两个ele。其中第二次的两个ele都为NULL，所以数组 lonadingbox一共具有6个成员。
+换句话说，整个页面过程一共渲染 render\(\) 了三次，每次添加都往 lonadingbox 中添加了两个ele。其中第二次添加的两个ele都为NULL，所以数组 lonadingbox一共具有6个成员。
 
 ---
 
