@@ -2,9 +2,9 @@
 
 > 注意，元素必须是闭合标签的，如果多个元素时，必须是被某个元素包裹。
 >
-> 正确示范： &lt;div&gt;&lt;/div&gt;、&lt;h1&gt;&lt;/h1&gt;、&lt;input /&gt;、&lt;div&gt;&lt;a&gt;&lt;/a&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+> 正确示例： &lt;div&gt;&lt;/div&gt;、&lt;h1&gt;&lt;/h1&gt;、&lt;input /&gt;、&lt;div&gt;&lt;a&gt;&lt;/a&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
 >
-> 错误示范：&lt;input value='123'&gt; 、 &lt;a&gt;&lt;/a&gt;&lt;span&gt;&lt;/span&gt;
+> 错误示例：&lt;input value='123'&gt; 、 &lt;a&gt;&lt;/a&gt;&lt;span&gt;&lt;/span&gt;
 
 ```js
 import React from 'react';
