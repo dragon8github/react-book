@@ -80,7 +80,7 @@ ReactDOM.render(
 
 调试流程：
 
-1、定位错误在 hideLoading\(\) 中出错。
+1、定位错误在 hideLoading\(\) 方法中出错。
 
 2、ele.style.display = 'none' 报错。原因是对NULL进行了操作。为什么会存在NULL？不是应该两个DOM元素吗？
 
