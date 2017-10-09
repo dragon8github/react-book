@@ -1,5 +1,7 @@
 使用map对数组进行遍历
 
+> 对于React中的循环渲染来说，**key**属性是必备的，否则会报警告。虽然也不会造成什么大的影响。
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -15,8 +17,8 @@ class Me extends React.Component
     {
         return <div>    
             {
-                this.props.users.map((item) => {
-                    return <h2>{item.name}:{item.age}</h2>
+                this.props.users.map((item, index) => {
+                    return <h2 key = {index}>{item.name}:{item.age}</h2>
                 })
             }
         </div>
