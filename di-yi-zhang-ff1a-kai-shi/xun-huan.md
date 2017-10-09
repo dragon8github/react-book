@@ -11,9 +11,6 @@ let obj = [
 
 class Me extends React.Component
 {
-    showMe() {
-        window.alert(123)
-    }
     render()
     {
         return <div>    
