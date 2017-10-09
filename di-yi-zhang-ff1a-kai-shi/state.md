@@ -21,7 +21,7 @@ class Clock extends React.Component {
         clearInterval(this.timerID);
     }
     componentDidMount() {
-        this.timerID = setInterval(() => { this.tick() }, 1000);
+        this.timerID = setInterval(() => this.tick(), 1000);
     }
     tick() {
         this.setState({
@@ -29,18 +29,15 @@ class Clock extends React.Component {
         });
     }
     render() {
-        return ( <
-            div >
-            <
-            h1 > Hello, world! < /h1> <
-            h2 > It is { this.state.date.toLocaleTimeString() }. < /h2> <
-            /div>
-        );
+        return (<div>
+                <h1>Hello, world!</h1> 
+                <h2>It is { this.state.date.toLocaleTimeString() }.</h2> 
+        </div>);
     }
 }
 
-ReactDOM.render( <
-    Clock / > ,
+ReactDOM.render( 
+    <Clock /> ,
     document.getElementById('root')
 );
 ```
