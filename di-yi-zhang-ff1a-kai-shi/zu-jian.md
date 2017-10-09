@@ -1,6 +1,6 @@
-React 中的组件创建其实就是 ES2015 中的类语法，只需要继承 React.Component 即可。
+React 中的组件其实就是 ES2015 中的类（Class）的语法，只需要继承 React.Component 即可。
 
-> 注意，组件的首字母必须大写
+> 注意，组件的定义和使用时，首字母必须大写
 
 ```js
 import React from 'react';
@@ -74,7 +74,6 @@ ReactDOM.render(
     <Me { ...obj } />,
     document.getElementById('root')
 );
-
 ```
 
 
