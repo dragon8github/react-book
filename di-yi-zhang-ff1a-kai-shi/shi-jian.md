@@ -1,6 +1,6 @@
 点击事件示例
 
-> 注意，onClick中的方法不需要加\(\)，否则就自动执行showMe\(\)了
+> 注意，onClick中的方法不需要加\(\)，否则就自动执行该方法了
 
 ```js
 import React from 'react';
@@ -72,7 +72,8 @@ ReactDOM.render(
 
 > 注意，由于箭头函数没有this，会往父辈寻找object对象作为this。
 >
-> 本demo将class Me 作为了 this，所以才能正常找到this.props.name。
+> 本demo将class Me 作为了 this  
+> ，所以才能正常找到this.props.name。
 >
 > 如果是正常的function，this指向的是函数本身。是找不到this.props.name的。解决方法是使用function.prototype.bind\(obj\)
 
@@ -105,7 +106,6 @@ ReactDOM.render(
     <Me { ...obj } />,
     document.getElementById('root')
 );
-
 ```
 
 
