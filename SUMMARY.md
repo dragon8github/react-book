@@ -12,7 +12,7 @@
 * [事件](di-yi-zhang-ff1a-kai-shi/shi-jian.md)
 * [循环](di-yi-zhang-ff1a-kai-shi/xun-huan.md)
 * [state 与 生命周期](di-yi-zhang-ff1a-kai-shi/state.md)
-* [axios 与 state](di-yi-zhang-ff1a-kai-shi/axios-yu-state.md)
+* [axios 与 refs](di-yi-zhang-ff1a-kai-shi/axios-yu-state.md)
 
 ## 第二章：react native
 
