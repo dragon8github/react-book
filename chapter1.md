@@ -39,7 +39,7 @@ yarn add babel-loader babel-core
 
 ```ruby
 $ mkdir src && touch webpack.config.js .babelrc index.html
-$ cd src && touch main.js && mkdir assets
+$ cd src && touch main.js && mkdir assets components
 ```
 
 配置webpack.config.js
