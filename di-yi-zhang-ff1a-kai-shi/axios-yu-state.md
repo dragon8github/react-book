@@ -112,7 +112,6 @@ class Team extends React.Component {
     }
     componentWillMount() {
         axios.get("http://localhost:8080/team.php").then((res) => {
-            // 当使用之后，界面会被重新渲染，但为什么会渲染三次，且中间一次是null呢？
             this.setState({
                 leader: res.data.leader,
                 teammates: res.data.teammates
@@ -131,7 +130,7 @@ class Team extends React.Component {
             <h1> 项目经理 </h1> 
             <span ref = {(ele) => { if (ele) ele.style.display = this.state.leader === "" ? 'display' : 'none' }} > 正在加载... </span> 
             { this.state.leader } 
-            </div>
+        </div>
     }
 }
 
