@@ -9,6 +9,7 @@
 ```php
 <?php 
     header("Access-Control-Allow-Origin:*");
+    sleep(1);
     echo '{"leader":"shenyi","teammates":[{"name":"lisi","age":19},{"name":"zhangsan","age":20}]}';
 ?>
 ```
@@ -30,14 +31,10 @@ class Team extends React.Component {
         }
     }
     showLoading () {
-         this.loadingbox.forEach((ele) => {
-            ele.style.display = 'block'
-        })
+         this.loadingbox.forEach((ele) => ele.style.display = 'block')
     }
     hideLoading () {
-        this.loadingbox.forEach((ele) => {
-            ele.style.display = 'none'
-        })
+        this.loadingbox.forEach((ele) => ele.style.display = 'none')
     }
     componentWillMount () {
         this.showLoading()
