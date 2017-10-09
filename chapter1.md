@@ -28,6 +28,7 @@ yarn add react react-dom webpack
 
 # 添加webpack插件
 yarn add html-webpack-plugin
+yarn add webpack-dev-server
 
 # 添加babel插件
 yarn add babel-preset-react
@@ -78,6 +79,19 @@ module.exports = {
 }
 ```
 
+配置package.json
+
+```js
+{
+  //...
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  }
+}
+
+```
+
 编写index.html代码
 
 ```js
@@ -93,5 +107,23 @@ module.exports = {
 </html>
 ```
 
+编写main.js代码
 
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
+```
+
+启动项目，浏览器打开localhost:9000
+
+```
+npm run dev
+```
+
+![](/assets/123123.png)
 
