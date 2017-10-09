@@ -31,7 +31,7 @@ class Team extends React.Component {
         }
     }
     showLoading () {
-         this.loadingbox.forEach((ele) => ele.style.display = 'block')
+        this.loadingbox.forEach((ele) => ele.style.display = 'block')
     }
     hideLoading () {
         this.loadingbox.forEach((ele) => ele.style.display = 'none')
