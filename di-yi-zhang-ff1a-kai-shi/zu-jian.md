@@ -24,7 +24,7 @@ ReactDOM.render(
 
 ---
 
-对象参数的传递，依然是使用大括号。
+传递一个object类型的参数
 
 ```js
 import React from 'react';
@@ -51,7 +51,7 @@ ReactDOM.render(
 
 ---
 
-使用ES2015的新语法对象结构进行参数传递，可以省略属性名的书写
+使用ES2015的新语法对象结构进行参数传递，这样做的好处是，对比上个demo，可以省略属性名的书写
 
 ```js
 import React from 'react';
