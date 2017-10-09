@@ -44,3 +44,11 @@ ReactDOM.render(
 
 ![](/assets/1231251312512135213551123.png)
 
+---
+
+> 相关文档：
+>
+> https://reactjs.org/docs/react-component.html
+
+
+
