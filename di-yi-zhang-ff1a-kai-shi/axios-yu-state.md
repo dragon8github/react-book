@@ -57,8 +57,8 @@ class Team extends React.Component {
             <h1>团队队员</h1>
             <span ref = {(ele) => {this.loadingbox.push(ele)}}> 正在加载... </span>
             {
-                this.state.teammates.map((item) => {
-                    return <h2> { item.name } —— { item.age } </h2>
+                this.state.teammates.map((item, index) => {
+                    return <h2 key = { index }> { item.name } —— { item.age } </h2>
                 })
             }
             <h1>项目经理</h1>

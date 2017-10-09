@@ -30,7 +30,6 @@ ReactDOM.render(
     <Me users = { obj } />,
     document.getElementById('root')
 );
-
 ```
 
 ![](/assets/12yogid.png)
