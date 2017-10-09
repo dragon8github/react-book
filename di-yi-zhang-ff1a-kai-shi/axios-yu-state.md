@@ -4,7 +4,7 @@
 >
 > &lt;refs 官方文档&gt;：[https://reactjs.org/docs/refs-and-the-dom.html](https://reactjs.org/docs/refs-and-the-dom.html)
 >
-> ref的作用其实就是获取、操作dom元素
+> ref的作用其实就是获取、操作dom元素。
 >
 > 在Vue中，是为DOM、标签、组件绑定一个名字，然后再通过this.$refs.name获取该DOM，再进一步操作。
 >
