@@ -96,7 +96,7 @@ module.exports = {
 
 ```js
 {
-  //...
+  ...
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server"
