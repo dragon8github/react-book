@@ -92,7 +92,7 @@ module.exports = {
 }
 ```
 
-配置package.json
+配置package.json，加入scripts
 
 ```js
 {
