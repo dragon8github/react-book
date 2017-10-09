@@ -24,5 +24,58 @@ ReactDOM.render(
 
 ---
 
+对象参数的传递，依然是使用大括号。
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+let obj = {
+    name: "Lee",
+    age: "24"
+}
+
+class Me extends React.Component
+{
+    render()
+    {
+        return <h2>{this.props.fuck.name}:{this.props.fuck.age}</h2>
+    }
+}
+
+ReactDOM.render(
+    <Me fuck = { obj } />,
+    document.getElementById('root')
+);
+```
+
+---
+
+使用ES2015的新语法对象结构进行参数传递，可以省略属性名的书写
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+let obj = {
+    name: "Lee",
+    age: "24"
+}
+
+class Me extends React.Component
+{
+    render()
+    {
+        return <h2>{this.props.name}:{this.props.age}</h2>
+    }
+}
+
+ReactDOM.render(
+    <Me { ...obj } />,
+    document.getElementById('root')
+);
+
+```
+
 
 
