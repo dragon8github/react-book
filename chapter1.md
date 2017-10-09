@@ -49,7 +49,7 @@ $ cd src && touch main.js && mkdir assets components
 
 > 不要认为 Webpack 只适合单页面的构建，
 >
-> 事实上只需要配置好 entry 以及 HtmlWebpackPlugin 即可构建多个页面。
+> 事实上只需要配置多个 entry 以及 多个 HtmlWebpackPlugin 即可构建多个页面。
 
 ```js
 var HtmlWebpackPlugin = require('html-webpack-plugin')
