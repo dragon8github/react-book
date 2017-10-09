@@ -106,15 +106,15 @@ class Team extends React.Component {
         super(props)
         this.loadingbox = []
         this.state = {
-            leader: "",
-            teammates: []
+            leader    : "",
+            teammates : []
         }
     }
     componentWillMount() {
         axios.get("http://localhost:8080/team.php").then((res) => {
             this.setState({
-                leader: res.data.leader,
-                teammates: res.data.teammates
+                leader    : res.data.leader,
+                teammates : res.data.teammates
             })
         })
     }
