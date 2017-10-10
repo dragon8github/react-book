@@ -71,6 +71,9 @@ export default class News extends React.Component {
 import React from 'react';
 
 export default class Agree extends React.Component {
+    componentWillReceiveProps (newProp) {
+        console.log("原有的：" + this.props.agreeNum + ", 新的：" + newProp.agreeNum)
+    }
     render () {
         return <div>
             <h2>点赞数：{ this.props.agreeNum }</h2>
@@ -79,7 +82,17 @@ export default class Agree extends React.Component {
 }
 ```
 
-无须担心反复 import 重复的资源导致打包变大。webpack会智能处理。不可能重复引入。所以大可放心处理
+无须担心反复 import 重复的资源导致打包变大。webpack会智能处理。不可能重复引入。所以大可放心处理。
+
+知识点：
+
+当传入的props发生变化时，触发。往往我们可以在这个函数中来修改state让子组件重新渲染。
+
+```js
+componentWillReceiveProps (newProp) {
+    console.log("原有的：" + this.props.agreeNum + ", 新的：" + newProp.agreeNum)
+}
+```
 
 ![](/assets/s88z8zx8xz8cz8xc.png)
 
