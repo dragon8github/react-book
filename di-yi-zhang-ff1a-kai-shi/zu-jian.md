@@ -6,8 +6,7 @@ React 中的组件其实就是 ES2015 中的类（Class）的语法，只需要�
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Me extends React.Component
-{
+class Me extends React.Component {
     render()
     {
         return <h2>{this.props.name}:{this.props.age}</h2>
@@ -35,10 +34,8 @@ let obj = {
     age: "24"
 }
 
-class Me extends React.Component
-{
-    render()
-    {
+class Me extends React.Component {
+    render() {
         return <h2>{this.props.fuck.name}:{this.props.fuck.age}</h2>
     }
 }
@@ -62,10 +59,8 @@ let obj = {
     age: "24"
 }
 
-class Me extends React.Component
-{
-    render()
-    {
+class Me extends React.Component {
+    render() {
         return <h2>{this.props.name}:{this.props.age}</h2>
     }
 }

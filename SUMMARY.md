@@ -1,11 +1,11 @@
 # Summary
 
-## 第零章：环境搭建
+## 第零章：React环境搭建
 
 * [简介](README.md)
 * [脚手架搭建](chapter1.md)
 
-## 第一章：react基础
+## 第一章：React基础
 
 * [元素](di-yi-zhang-ff1a-kai-shi/yuan-su.md)
 * [组件与属性](di-yi-zhang-ff1a-kai-shi/zu-jian.md)
@@ -16,5 +16,9 @@
 * [实战：点赞](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.md)
 * [实战：点赞之组件模块化](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan-zhi-zu-jian-mo-kuai-hua.md)
 
-## 第二章：react native
+## 第二章：React进阶
+
+* [父子组件 与 嵌套组件](di-erzhang-ff1a-react-jin-jie/fu-zi-zu-jian-yu-qian-tao-zu-jian.md)
+
+## 第三章：react native
 
