@@ -89,7 +89,7 @@ export default class Agree extends React.Component {
 
 知识点：
 
-1、componentWillReceiveProps
+#### 1、componentWillReceiveProps
 
 当传入的props发生变化时触发。往往我们可以在这个函数中来修改state让子组件重新渲染。
 
@@ -99,9 +99,9 @@ componentWillReceiveProps (newProp) {
 }
 ```
 
-2、shouldComponentUpdate
+#### 2、shouldComponentUpdate
 
-默认是true ，如果返回false。则阻止render的执行.可以当为拦截器，阻止一些无意义的渲染。
+默认是true ，如果返回false。则阻止render的执行.可以当为拦截器，阻止一些无意义的渲染。尤其是在一些充斥着大量元素的页面，如大表单、大表格，复杂的交互页面等。
 
 譬如说，我们的业务逻辑是：当新的值和久的值不一样的时候才执行render\(\)
 
@@ -115,8 +115,6 @@ shouldComponentUpdate(nextProps, nextState) {
          return false;        
 }
 ```
-
-
 
 ![](/assets/s88z8zx8xz8cz8xc.png)
 
