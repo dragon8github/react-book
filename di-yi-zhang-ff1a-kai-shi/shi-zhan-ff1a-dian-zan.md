@@ -24,7 +24,7 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');
 $redis = new Redis();
 $redis->connect("127.0.0.1", 6379);
 
-function agree ($newsid) {
+function agree($newsid) {
     global $redis;
     $get_num = $redis->hget("newsagree", "news".$newsid);
 
