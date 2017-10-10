@@ -69,6 +69,8 @@ exit("");
 
 main.js的代码：
 
+使用了一个小工具qs插件，需要先安装一下： `yarn add qs`
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom'
