@@ -125,7 +125,7 @@ ReactDOM.render(
 
 这样做的好处是，php默认是识别 application/x-www-form-urlencoded 方式提交的数据的，可以方便的通过$\_POST获取并操作。
 
-值得一提的是，axios 默认的post提交方式是 application/json ，php默认不识别 application/json 方式提交的数据，$\_POST是获取不到的，需要先使用必须使用 `$GLOBALS['HTTP_RAW_POST_DATA']` 取出来，然后再使用 `json_decode()` 转换获取才可以。
+另一方面，axios 默认的post提交方式是 application/json ，php默认不识别这种方式提交的数据，所以$\_POST是获取不到的，需要先使用必须使用 `$GLOBALS['HTTP_RAW_POST_DATA']` 取出来，然后再使用 `json_decode()` 转换获取才可以。
 
 具体可以参考这篇文章：[http://www.cnblogs.com/CyLee/p/7644380.html](http://www.cnblogs.com/CyLee/p/7644380.html)
 
