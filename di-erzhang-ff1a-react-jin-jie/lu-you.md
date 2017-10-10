@@ -36,8 +36,8 @@ $products =
 
 // 获取新闻列表
 if (isset($_GET["type"]) && $_GET["type"] == "news") 
-	exit($news);
-	
+    exit($news);
+
 // 默认获取商品列表
 exit($products);
 ```
@@ -130,8 +130,6 @@ export default class MyRouter extends React.Component {
                     <li><Link to = '/products'>商品排行榜</Link></li>
                     <li><Link to = '/news'    >新闻排行榜</Link></li>
                 </ul>
-
-                <hr/>
 
                 <Route exact path = '/'         component = { ProductListToplist }/>
                 <Route       path = '/products' component = { ProductListToplist }/>
