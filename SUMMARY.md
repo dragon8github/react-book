@@ -19,7 +19,7 @@
 ## 第二章：React进阶
 
 * [父子组件 与 嵌套组件](di-erzhang-ff1a-react-jin-jie/fu-zi-zu-jian-yu-qian-tao-zu-jian.md)
-* [路由](di-erzhang-ff1a-react-jin-jie/lu-you.md)
+* [React 路由](di-erzhang-ff1a-react-jin-jie/lu-you.md)
 
 ## 第三章：react native
 
