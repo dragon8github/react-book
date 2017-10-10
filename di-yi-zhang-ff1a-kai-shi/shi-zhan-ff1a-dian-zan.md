@@ -123,13 +123,13 @@ ReactDOM.render(
 
 这样一来请求方式自动转换以 application/x-www-form-urlencoded 方式提交。这也是推荐的一种提交方式。
 
-这样做的好处是，php默认是识别 application/x-www-form-urlencoded 方式提交的数据，可以通过$\_POST直接获取操作。
+这样做的好处是，php默认是识别 application/x-www-form-urlencoded 方式提交的数据的，可以方便的通过$\_POST获取并操作。
 
-如果是使用 application/json 方式提交的数据，$\_POST是获取不到的，需要先使用必须使用$GLOBALS\['HTTP\_RAW\_POST\_DATA'\]取出来，然后再json\_decode才可以。
+值得一提的是，axios 默认的post提交方式是 application/json ，使用 application/json 方式提交的数据，$\_POST是获取不到的，需要先使用必须使用$GLOBALS\['HTTP\_RAW\_POST\_DATA'\]取出来，然后再json\_decode才可以。
 
 具体可以参考这篇文章：[http://www.cnblogs.com/CyLee/p/7644380.html](http://www.cnblogs.com/CyLee/p/7644380.html)
 
-值得一提的是，axios 默认的post提交方式就是 application/json ，为了避免这个麻烦，建议手动配置header为application/x-www-form-urlencoded 方式提交，具体参考官方手册：
+为了避免这个麻烦，建议手动配置axios的header为 application/x-www-form-urlencoded 方式提交：
 
 > axios.defaults.headers.post\['Content-Type'\] = 'application/x-www-form-urlencoded';
 
