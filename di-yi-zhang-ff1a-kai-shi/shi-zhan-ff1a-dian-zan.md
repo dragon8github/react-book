@@ -1,6 +1,6 @@
 本节课实现新闻点赞功能。
 
-老规矩先使用php搭建后台接口。我们使用redis代替数据库。
+老规矩先使用php搭建后台接口。我们使用redis代替数据库
 
 window下使用redis，以及phpstudy如何添加redis的扩展，请参考以下教程
 
@@ -14,13 +14,15 @@ window下使用redis，以及phpstudy如何添加redis的扩展，请参考以�
 >
 > 《redis使用教程》：[http://www.cnblogs.com/CyLee/p/7193278.html](http://www.cnblogs.com/CyLee/p/7193278.html)
 
+news.php的代码：
+
 ```php
 <?php
-header('Access-Control-Allow-Origin:*');  
-header("content-type:application/json");
+header("Access-Control-Allow-Origin:*"); 
+header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
 
 $redis = new Redis();
-$redis->connect("127.0.0.1", 6379);
+$redis->connect("127.0.0.1",6379);
 
 function agree ($newsid) {
     global $redis;
@@ -45,6 +47,7 @@ function getAgree($newsid) {
         return 0;
 }
 
+
 // 代表点赞, 要为新闻的点赞数++
 if (isset($_POST["newsid"])) {   
     $agreeNum = agree($_POST["newsid"]);
@@ -53,26 +56,82 @@ if (isset($_POST["newsid"])) {
     exit($strjson);
 }
 
-// 代表获取新闻内容
+// 代表获取新闻点赞数
 if (isset($_GET["newsid"])) { 
-    $news = 
-        '[{"newsid":"101","pubtime":"2016-10-02","title":"QFix 探索之路 —— 手Q热补丁轻量级方案 ","desc":"QFix是手Q团队近期推出的一种新的Android热补丁方案，在不影响App运行时性能（无需插桩去preverify）的前提下有效地规避了"},'
-        .'{"newsid":"102","pubtime":"2016-10-01","title":"大规模排行榜系统实践及挑战 ","desc":" 如何支持业务接近接入，数万乃至几十万级排行榜自动化申请调度？选择什么样的存储引擎？怎样避免各业务资源抢占? "},'
-        .'{"newsid":"103","pubtime":"2016-09-28","title":"BitBucket Cloud新增Git大文件存储Beta支持 ","desc":"Git LFS背后的基本理念是将大型二进制文件存储在并行存储中，而Git库只包含到那些文件的轻量级引用"},'
-        .'{"newsid":"104","pubtime":"2016-09-30","title":"飞天进化，互联网、数据和计算的聚变 ","desc":"阿里巴巴技术委员会主席王坚发布的新书《在线》，被外界视作阿里巴巴技术体系总设计师的王坚出版的第一本著作，吸引了众多参会者的兴趣"}]';
-
-    $news = json_decode($news, 1);
-
-    foreach($news as $n) {
-      if ($n["newsid"] == $_GET["newsid"]) {
-          $n["agree"] = getAgree($n["newsid"]);
-          exit(json_encode($n));
-      }
-    }
+    $agreeNum = getAgree($_GET["newsid"]);
+    $arr = array("agree" => $agreeNum);
+    $strjson = json_encode($arr);   
+    exit($strjson);
 }
 
 exit("");
 ```
+
+main.js的代码：
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom'
+import axios from "axios"
+import qs from 'qs'
+
+class News extends React.Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            agreeNum: 0
+        }
+    }
+    agreeSubmit (obj) {
+        axios.post("http://localhost:8080/news.php", qs.stringify({
+            newsid: obj.props.newsid  
+        })).then((res) => {
+            this.setState({
+                agreeNum: res.data.agree
+            })
+        })
+    }
+    componentWillMount () {
+        axios.get("http://localhost:8080/news.php", {
+            params: {
+                newsid: this.props.newsid
+            }
+        }).then((res) => {
+            this.setState({
+                agreeNum: res.data.agree
+            })
+        })
+    }
+    render () {
+        return <div>
+            <h1>这是一篇新闻,新闻ID是101</h1>
+            <h2>{ this.state.agreeNum }</h2>
+            <input type = "button" value = "我要点赞" onClick = {() => {
+                this.agreeSubmit(this)
+            }}/>
+        </div>
+    }
+}
+
+ReactDOM.render(
+    <News newsid = '101' />,
+    document.getElementById('root')
+);
+```
+
+利用 qs.stringify\({ newsid: obj.props.newsid }\), 将对象转化为 a=999&b=333&c=555 这样的数据格式。
+
+这样一来请求方式自动转换以 application/x-www-form-urlencoded 方式提交。这也是推荐的一种提交方式。
+
+这样做的好处是，php默认是识别 application/x-www-form-urlencoded 方式提交的数据，可以通过$\_POST直接获取操作。
+
+如果是使用 application/json 方式提交的数据，$\_POST是获取不到的，需要先使用必须使用$GLOBALS\['HTTP\_RAW\_POST\_DATA'\]取出来，然后再json\_decode才可以。
+
+具体可以参考这篇文章：[http://www.cnblogs.com/CyLee/p/7644380.html](http://www.cnblogs.com/CyLee/p/7644380.html)
+
+值得一提的是，axios 默认的post提交方式就是 application/json ，为了避免这个麻烦，建议手动配置header为application/x-www-form-urlencoded 方式提交，具体参考官方手册：
+
+> axios.defaults.headers.post\['Content-Type'\] = 'application/x-www-form-urlencoded';
 
 
 
