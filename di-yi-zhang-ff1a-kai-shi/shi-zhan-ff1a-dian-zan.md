@@ -119,7 +119,7 @@ ReactDOM.render(
 );
 ```
 
-利用 `qs.stringify({ newsid: obj.props.newsid }`\), 将对象转化为`a=1&b=2&c=3` 这样的字符串数据格式。
+利用 `qs.stringify({ newsid: obj.props.newsid })`, 将对象转化为`a=1&b=2&c=3` 这样的字符串数据格式。
 
 这样一来请求方式自动转换以 application/x-www-form-urlencoded 方式提交。这也是推荐的一种提交方式。
 
