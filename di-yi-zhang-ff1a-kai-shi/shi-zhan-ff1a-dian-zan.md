@@ -85,7 +85,7 @@ class News extends React.Component {
     agreeSubmit (obj) {
         axios.post("http://localhost:8080/news.php", qs.stringify({
             newsid: obj.props.newsid  
-        })).then((res) => {
+        })).then(res => {
             this.setState({
                 agreeNum: res.data.agree
             })
@@ -96,7 +96,7 @@ class News extends React.Component {
             params: {
                 newsid: this.props.newsid
             }
-        }).then((res) => {
+        }).then(res => {
             this.setState({
                 agreeNum: res.data.agree
             })
