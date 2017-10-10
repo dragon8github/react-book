@@ -72,7 +72,10 @@ import React from 'react';
 
 export default class Agree extends React.Component {
     componentWillReceiveProps (newProp) {
-        console.log("原有的：" + this.props.agreeNum + ", 新的：" + newProp.agreeNum)
+        console.log("旧的：" + this.props.agreeNum + ", 新的：" + newProp.agreeNum)
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+         return true;       
     }
     render () {
         return <div>
@@ -86,13 +89,34 @@ export default class Agree extends React.Component {
 
 知识点：
 
-当传入的props发生变化时，触发。往往我们可以在这个函数中来修改state让子组件重新渲染。
+1、componentWillReceiveProps
+
+当传入的props发生变化时触发。往往我们可以在这个函数中来修改state让子组件重新渲染。
 
 ```js
 componentWillReceiveProps (newProp) {
     console.log("原有的：" + this.props.agreeNum + ", 新的：" + newProp.agreeNum)
 }
 ```
+
+2、shouldComponentUpdate
+
+默认是true ，如果返回false。则阻止render的执行.可以当为拦截器，阻止一些无意义的渲染。
+
+譬如说，我们的业务逻辑是：当新的值和久的值不一样的时候才执行render\(\)
+
+官方不推荐滥用，容易导致出错和难以维护。但有时候确实有用。
+
+```js
+shouldComponentUpdate(nextProps, nextState) {
+     if (nextProps != nextState) 
+         return true;
+     else
+         return false;        
+}
+```
+
+
 
 ![](/assets/s88z8zx8xz8cz8xc.png)
 
