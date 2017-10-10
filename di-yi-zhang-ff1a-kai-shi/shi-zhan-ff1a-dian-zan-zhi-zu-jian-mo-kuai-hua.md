@@ -1,8 +1,7 @@
 对上一节内容进行简单扩展，分离组件
 
 ```
-$ cd /src && mkdir compooents && cd components
-$ touch Agree.js News.js
+$ cd src/components && touch Agree.js News.js
 ```
 
 main.js 修改为
