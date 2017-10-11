@@ -88,15 +88,13 @@ export default class MyRouter extends React.Component {
 
 ---
 
-注视点
+### 知识点：
 
 > 1、exact 的作用是什么？
 
-表示精确匹配，以 /news 这个路由为例，如果不加入精确匹配。那么当我们进入 http://localhost:9000/news/101 页面的时候，
+表示精确匹配，以 /news 这个路由为例，如果不加入精确匹配。那么当我们进入 [http://localhost:9000/news/101](http://localhost:9000/news/101) 页面的时候，
 
 不仅加载 InfoDetail 组件， 也会加载 NewsTopList 组件。这是因为两者都被匹配到了。解决方法就是加入 exact 关键词完全精确匹配
 
 这里要清楚一个概念：路由匹配并非加载某个页面，而是加载匹配到的组件。
-
-
 
