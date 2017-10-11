@@ -132,5 +132,27 @@ export default class MyRouter extends React.Component {
 }/>
 ```
 
+4、传入组件的属性（props），都可以在组件中的 constructor \(props\) {super\(props\)} 继承获得，然后就可以使用this.props调用了
+
+```js
+export default class UserLogin extends React.Component {
+    constructor (props) {
+        console.log(props);
+        super(props)
+    }
+    render () {
+        return <div>
+            
+                <button onClick = {() => {
+                   console.log(this.props)
+                }}>
+                    登录
+                </button>
+            </div>
+        </div>
+    }
+}
+```
+
 
 
