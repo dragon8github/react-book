@@ -101,7 +101,7 @@ export default class MyRouter extends React.Component {
 
 1、页面跳转   this.props.history.push\('/news'\)
 
-2、对象的键如果是变量的时候，加入\[\]可以解析。这是ES2015的新特性
+2、object变量赋值的时候，如果键是变量的话，加入\[\]可以解析。这是ES2015的新特性
 
 ```js
  // 正常的做法
