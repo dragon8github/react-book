@@ -6,7 +6,7 @@ export default class Passport {
          this.islogin = false
      }
      ulogin (uname, upass, successCallBack, failCallBack) {
-         if(uname === "shenyi" && upass === "123") {
+         if (uname === "shenyi" && upass === "123") {
             this.islogin = true
             let successData = {msg: "登录成功", result: "success", resultCode: 1}
             return successCallBack ? successCallBack(successData) : new Promise((resolve, reject) => resolve(successData))
