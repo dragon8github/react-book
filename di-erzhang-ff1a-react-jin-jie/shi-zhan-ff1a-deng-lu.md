@@ -83,12 +83,8 @@ export default class MyRouter extends React.Component {
                 <Route exact     path = '/'             component = { ProductListToplist }/>
                 <Route           path = '/products'     component = { ProductListToplist }/>
                 <Route           path = '/news/:newsid' component = { InfoDetail }/>  
-                <Route exact     path = '/news'  render = { props => {
-                    return passport.islogin ? <NewsTopList { ...props }/> : <Redirect to = '/login'/>
-                }}/> 
-                <Route           path = '/login' render = { props => {
-                    return <UserLogin passport = { passport } { ...props } />
-                }}/>
+                <Route exact     path = '/news'         render    = { props => passport.islogin ? <NewsTopList { ...props }/> : <Redirect to = '/login'/>}/> 
+                <Route           path = '/login'        render    = { props => <UserLogin passport = { passport } { ...props } />}/>
             </div>
         </Router>
     }
@@ -101,7 +97,7 @@ export default class MyRouter extends React.Component {
 
 1、页面跳转   this.props.history.push\('/news'\)
 
-2、object变量赋值的时候，如果键是变量的话，加入\[\]可以解析。这是ES2015的新特性
+2、object变量赋值的时候，如果key也是变量的情况
 
 ```js
  // 正常的做法
@@ -114,6 +110,29 @@ export default class MyRouter extends React.Component {
     [key] : event.target.value
  })
 ```
+
+3、Route render\(props\) 支持华丽的书写复杂的逻辑
+
+```js
+<Route exact path="/news" render = {(props) => {
+        // 根据用户是否登录跳转路由
+        if(passport.islogin) {
+            return <NewsTopList {...props}/>
+        } else {  
+           // 如果用户没有登录，跳转到登录界面
+           return <Redirect to="/login"/>
+        }
+ }
+}/>
+
+<Route path = "/login" render = {(props) => {
+    //使用es2015的对象解构方式传入props
+    return <UserLogin passport = {passport} {...props} />
+  }
+}/>
+```
+
+
 
 
 
