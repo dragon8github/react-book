@@ -132,7 +132,7 @@ export default class MyRouter extends React.Component {
 }/>
 ```
 
-4、传入组件的属性（props），都可以在组件中的 constructor \(props\) {super\(props\)} 继承获得，然后就可以使用this.props调用了
+4、传入组件的所有属性（props），都可以在组件（类）中的构造函数中继承` constructor (props) {super(props)}`，然后就可以使用this.props调用了。
 
 ```js
 export default class UserLogin extends React.Component {
