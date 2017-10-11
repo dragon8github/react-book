@@ -4,29 +4,31 @@
 >
 > &lt;Redux github&gt;：[https://github.com/reactjs/redux](https://github.com/reactjs/redux)
 >
-> &lt;Redux-thunk&gt;：https://github.com/gaearon/redux-thunk
+> &lt;Redux-thunk&gt;：[https://github.com/gaearon/redux-thunk](https://github.com/gaearon/redux-thunk)
 
 Redux 和 React 本身没有任何关系，任何框架甚至不使用框架也可以使用。
 
 ```
-$ yarn add redux redux-thunk
+$ yarn add redux
 ```
 
 redux/InfoReduce.js
 
 ```js
 let info = {
-    title: '测试新闻标题',
-    clicknum: 0
+    title    : '测试新闻标题',
+    clicknum : 0
 }
 
 export default (state = info, action) => {
-    if (action.type === 'INFO_ADDCLCIK') {
-        let oldNum = state.clicknum
-        oldNum++
-        return Object.assign({}, state, { clicknum : oldNum })
+    switch (action.type) {
+        case 'INCREMENT':
+            return Object.assign({}, state, { clicknum : state.clicknum + 1 })
+        case 'DECREMENT':
+            return Object.assign({}, state, { clicknum : state.clicknum - 1 }) 
+        default:
+            return state
     }
-    return state
 }
 ```
 
@@ -43,31 +45,25 @@ let store = createStore(InfoReduce)
 class InfoDetail extends React.Component {
     constructor () {
         super()
-        this.state = {
-            infoData : store.getState()
-        }
     }
-    addClick () {
-         store.dispatch({
-            type : 'INFO_ADDCLCIK'
-         })
-         this.setState({
-            infoData : store.getState()
-         })
+    componentWillMount () {
+        this.props.Store.subscribe(() => this.forceUpdate())
     }
    render () {
         return <div>
-             <h2>新闻标题: { this.state.infoData.title }</h2>
-             <span>点击量: { this.state.infoData.clicknum }</span>
-             <button onClick = { this.addClick.bind(this) }>修改点击量</button>
+             <h2>新闻标题: { this.props.Store.getState().title }</h2>
+             <span>点击量: { this.props.Store.getState().clicknum }</span>
+             <button onClick = { () => this.props.Store.dispatch({ type: 'INCREMENT' }) }> 加一 </button>
+             <button onClick = { () => this.props.Store.dispatch({ type: 'DECREMENT' }) }> 减一 </button>
         </div>
    }
 }
 
 ReactDOM.render(
-    <InfoDetail/>, 
+    <InfoDetail Store = {store}/>, 
     document.getElementById('root')
 )
+
 ```
 
 
