@@ -47,9 +47,7 @@ export default class UserLogin extends React.Component {
                     }).catch(err => {
                         window.alert(err.msg);
                     })
-                }}>
-                    登录
-                </button>
+                }}> 登 录 </button>
             </div>
         </div>
     }
