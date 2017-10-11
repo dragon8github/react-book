@@ -10,7 +10,7 @@ window下使用redis，以及phpstudy如何添加redis的扩展，请参考以�
 >
 > 《php\_igbinary.dll 资源下载》： [http://pecl.php.net/package/igbinary](http://pecl.php.net/package/igbinary)
 >
-> 《window版redis 下载地址》：[https://github.com/ServiceStack/redis-windows/raw/master/downloads/redis-latest.zip](https://github.com/ServiceStack/redis-windows/raw/master/downloads/redis-latest.zip)
+> 《window版redis下载地址》：[https://github.com/ServiceStack/redis-windows/raw/master/downloads/redis-latest.zip](https://github.com/ServiceStack/redis-windows/raw/master/downloads/redis-latest.zip)
 >
 > 《redis使用教程》：[http://www.cnblogs.com/CyLee/p/7193278.html](http://www.cnblogs.com/CyLee/p/7193278.html)
 
