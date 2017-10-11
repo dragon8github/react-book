@@ -33,16 +33,16 @@ export default class UserLogin extends React.Component {
             <h3>这是登录界面</h3>
             <div>
                 <span>用户名</span>
-                <input type = 'text' ref = { ele => this.userName = ele }/>
+                <input type = 'text' ref = { ele => this.userNameInput = ele }/>
             </div>
             <div>
                 <span>密码</span>
-                <input type = 'password' ref = { ele => this.userPass = ele }/>
+                <input type = 'password' ref = { ele => this.userPassInput = ele }/>
             </div>
             <div>
                 <button onClick = {() => {
                     let p = this.props.passport == null ? new Passport() : this.props.passport
-                    p.ulogin(this.userName.value, this.userPass.value).then(data => {
+                    p.ulogin(this.userNameInput.value, this.userPassInput.value).then(data => {
                         this.props.history.push('/news')
                     }).catch(err => {
                         window.alert(err.msg);
