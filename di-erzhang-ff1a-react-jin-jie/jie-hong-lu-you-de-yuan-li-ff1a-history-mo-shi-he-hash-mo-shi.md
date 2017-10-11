@@ -78,7 +78,7 @@ Hash 路由模式。此模式历史发展久远，而且相对成熟，不需要
 
 事实上，React Router 也支持 Hash 路由模式。只需要修改 BrowserRouter 为 HashRouter 即可：
 
-```
+```js
 // 修改前
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
