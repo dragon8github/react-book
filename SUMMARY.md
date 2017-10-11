@@ -24,5 +24,9 @@
 * [路由的原理：history模式 和 hash模式](di-erzhang-ff1a-react-jin-jie/jie-hong-lu-you-de-yuan-li-ff1a-history-mo-shi-he-hash-mo-shi.md)
 * [实战：登录](di-erzhang-ff1a-react-jin-jie/shi-zhan-ff1a-deng-lu.md)
 
-## 第三章：react native
+## 第三章：Redux
+
+* [Redux 入门](di-san-zhang-ff1a-redux/redux-ru-men.md)
+
+## 第四章：react native
 
