@@ -41,8 +41,8 @@ export default class UserLogin extends React.Component {
     render () {
         return <div>
             <h3>这是登录界面</h3>
-            <div><span>用户名：</span><input ref = { ele => this.userNameInput = ele } onKeyUp = {this.login.bind(this)} type = 'text'    /></div>            
-            <div><span>密 码： </span><input ref = { ele => this.userPassInput = ele } onKeyUp = {this.login.bind(this)} type = 'password'/></div>
+            <div><span>用户名：</span><input ref = { ele => this.userNameInput = ele } onKeyUp = { this.login.bind(this) } type = 'text'    /></div>            
+            <div><span>密 码： </span><input ref = { ele => this.userPassInput = ele } onKeyUp = { this.login.bind(this) } type = 'password'/></div>
             <div><button onClick = { this.login.bind(this) }> 登录 </button></div>
         </div>
     }
