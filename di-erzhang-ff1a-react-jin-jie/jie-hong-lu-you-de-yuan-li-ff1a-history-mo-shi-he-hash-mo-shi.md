@@ -51,9 +51,9 @@
 
 ---
 
-但 HTML5 History API 必须是支持 html5 的浏览器才可以使用，并且兼容性不一定非常优秀。所以有另一种更可靠的代替方案：
+但 HTML5 History API 必须是支持 html5 的浏览器才可以使用，所以兼容性差强人意。所以有另一种更可靠的代替方案：
 
-hash 路由模式。此模式历史发展久远，而且相对成熟，不需要过多介绍，直接看例子即可：
+Hash 路由模式。此模式历史发展久远，而且相对成熟，不需要过多介绍，直接看例子即可：
 
 ```js
 <!DOCTYPE html>
@@ -75,4 +75,16 @@ hash 路由模式。此模式历史发展久远，而且相对成熟，不需要
 ```
 
 ![](/assets/21323ashtyuuioihjhj.png)
+
+事实上，React Router 也支持 Hash 路由模式。只需要修改 BrowserRouter 为 HashRouter 即可：
+
+```
+// 修改前
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
+// 修改后
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
+```
+
+
 
