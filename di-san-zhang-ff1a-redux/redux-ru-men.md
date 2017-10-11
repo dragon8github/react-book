@@ -43,18 +43,19 @@ import InfoReduce from './redux/InfoReduce'
 let store = createStore(InfoReduce)
 
 class InfoDetail extends React.Component {
-    constructor () {
-        super()
+    constructor (props) {
+        super(props)
+        this.S = this.props.Store
     }
     componentWillMount () {
-        this.props.Store.subscribe(() => this.forceUpdate())
+        this.S.subscribe(() => this.forceUpdate())
     }
    render () {
         return <div>
-             <h2>新闻标题: { this.props.Store.getState().title }</h2>
-             <span>点击量: { this.props.Store.getState().clicknum }</span>
-             <button onClick = { () => this.props.Store.dispatch({ type: 'INCREMENT' }) }> 加一 </button>
-             <button onClick = { () => this.props.Store.dispatch({ type: 'DECREMENT' }) }> 减一 </button>
+             <h2>新闻标题: { this.S.getState().title }</h2>
+             <span>点击量: { this.S.getState().clicknum }</span>
+             <button onClick = { () => this.S.dispatch({ type: 'INCREMENT' }) }> 加一 </button>
+             <button onClick = { () => this.S.dispatch({ type: 'DECREMENT' }) }> 减一 </button>
         </div>
    }
 }
@@ -63,6 +64,7 @@ ReactDOM.render(
     <InfoDetail Store = {store}/>, 
     document.getElementById('root')
 )
+
 ```
 
 ![](/assets/asdasdasxzcxzqwe213123.png)
