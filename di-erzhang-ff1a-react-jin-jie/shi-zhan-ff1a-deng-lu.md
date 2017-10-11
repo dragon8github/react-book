@@ -64,7 +64,7 @@ let passport = new Passport()
 
 export default class MyRouter extends React.Component {
     render () {
-        return  <Router>
+        return <Router>
             <div>
                 <ul>
                     <li><Link to = '/'        >首页      </Link></li>
