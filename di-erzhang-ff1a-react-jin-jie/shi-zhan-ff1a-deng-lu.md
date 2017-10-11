@@ -150,7 +150,7 @@ export default class UserLogin extends React.Component {
 }
 ```
 
-5、在onClick 事件中绑定类中的方法时，方法是获取不到this的。原因不详。需要手动绑定this
+5、在 onClick 事件中绑定类中的方法，当方法运行时，我们发现this为undefined。原因不详。总之需要手动绑定this
 
 ```js
 <button onClick = { this.login.bind(this) }> 登录 </button>
