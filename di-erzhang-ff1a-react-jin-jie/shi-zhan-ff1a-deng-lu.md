@@ -1,4 +1,4 @@
-core/Passport.js
+新增 core/Passport.js
 
 ```js
 export default class Passport {
@@ -18,7 +18,7 @@ export default class Passport {
 }
 ```
 
-components/UserLogin.js
+新增 components/UserLogin.js
 
 ```js
 import React from 'react'
@@ -69,9 +69,13 @@ export default class UserLogin extends React.Component {
 }
 ```
 
-知识点：
 
-1、页面跳转   this.props.history.push\('/news'\) 
+
+---
+
+### 知识点：
+
+1、页面跳转   this.props.history.push\('/news'\)
 
 2、对象的键如果是变量的时候，加入\[\]可以解析。这是ES2015的新特性
 
