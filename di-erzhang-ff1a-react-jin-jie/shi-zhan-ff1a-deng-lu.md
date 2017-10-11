@@ -109,7 +109,7 @@ export default class MyRouter extends React.Component {
  })
 ```
 
-3、Route render\(props\) 支持华丽的书写复杂的逻辑。
+3、Route render\(props\) 支持书写复杂的逻辑。
 
 > 请注意，必须 return &lt;组件 /&gt;
 >
