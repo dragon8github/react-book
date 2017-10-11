@@ -126,13 +126,11 @@ export default class MyRouter extends React.Component {
 }/>
 
 <Route path = "/login" render = {(props) => {
-    //使用es2015的对象解构方式传入props
+    // 使用es2015的对象解构方式传入props
     return <UserLogin passport = {passport} {...props} />
   }
 }/>
 ```
-
-
 
 
 
