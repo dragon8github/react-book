@@ -41,11 +41,11 @@
 </html>
 ```
 
-通过上demo我们发现，history API 可以修改浏览器URL地址，而没有真实请求访问该地址的资源。
+通过上demo我们发现，**history API 可以修改浏览器URL地址，而并没有真实请求访问该地址的资源**。
 
 而当我们使用回退或前进时，会按照正常的页面跳转逻辑更新url地址，并且还会触发 window.onpopstate 。
 
-通过这点我们大概可以猜出 React Router API 的原理。
+通过这两点我们大概可以猜出 React Router 的实现原理。
 
 而当我们处于 history API 修改的地址如 [http://localhost:8080/abc](http://localhost:8080/abc) ，此时如果刷新页面，浏览器会去请求该地址的资源。如果服务器资源不存在。当然会报错咯。
 
