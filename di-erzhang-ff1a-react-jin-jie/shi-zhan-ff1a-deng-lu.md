@@ -111,7 +111,11 @@ export default class MyRouter extends React.Component {
  })
 ```
 
-3、Route render\(props\) 支持华丽的书写复杂的逻辑
+3、Route render\(props\) 支持华丽的书写复杂的逻辑。
+
+> 请注意，必须return &lt;组件 /&gt; 
+>
+> 由于我使用了箭头函数，当仅一行代码的时候，不仅可以省略大括号{}，并且对这个代码进行return。
 
 ```js
 <Route exact path="/news" render = {(props) => {
@@ -132,7 +136,7 @@ export default class MyRouter extends React.Component {
 }/>
 ```
 
-4、传入组件的所有属性（props），都可以在组件（类）中的构造函数中继承` constructor (props) {super(props)}`，然后就可以使用this.props调用了。
+4、传入组件的所有属性（props），都可以在组件（类）中的构造函数中继承`constructor (props) {super(props)}`，然后就可以使用this.props调用了。
 
 ```js
 export default class UserLogin extends React.Component {
