@@ -60,9 +60,9 @@ export default class NewsTopList extends React.Component {
 ```js
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import ProductListToplist from './ProductTopList'
-import NewsTopList from './NewsTopList'
-import InfoDetail from './InfoDetail'
+import ProductListToplist from './components/ProductTopList'
+import NewsTopList from './components/NewsTopList'
+import InfoDetail from './components/InfoDetail'
 
 export default class MyRouter extends React.Component {
     render () {

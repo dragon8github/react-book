@@ -36,8 +36,8 @@ $products =
 
 // 获取新闻列表
 if (isset($_GET["type"]) && $_GET["type"] == "news") 
-	exit($news);
-	
+    exit($news);
+
 // 默认获取商品列表
 exit($products);
 ```
@@ -113,13 +113,13 @@ export default class ProductTopList extends React.Component {
 }
 ```
 
-components/MyRouter.js
+MyRouter.js
 
 ```js
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import ProductListToplist from './ProductTopList'
-import NewsTopList from './NewsTopList'
+import ProductListToplist from './components/ProductTopList'
+import NewsTopList from './components/NewsTopList'
 
 export default class MyRouter extends React.Component {
     render () {
@@ -145,7 +145,7 @@ main.js
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MyRouter from './components/MyRouter'
+import MyRouter from './MyRouter'
 
 ReactDOM.render(
     <MyRouter />,
