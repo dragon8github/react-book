@@ -114,6 +114,8 @@ export default class MyRouter extends React.Component {
 > 请注意，必须return &lt;组件 /&gt;
 >
 > 由于我使用了箭头函数，当仅一行代码的时候，不仅可以省略大括号{}，并且对这个代码进行return。
+>
+> 毕竟在书写jsx的表达式时就需要大括号{}，所以多多利用箭头函数可以省略大括号{} 这个特性书写优美的代码吧。
 
 ```js
 <Route exact path="/news" render = {(props) => {
