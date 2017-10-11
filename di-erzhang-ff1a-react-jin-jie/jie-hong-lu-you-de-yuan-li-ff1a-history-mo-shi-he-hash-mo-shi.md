@@ -6,9 +6,9 @@
 
 这其实和路由的原理，浏览器的API window.history有关。先来试试下面的内容：
 
-注意，以下页面只有在服务器环境下部署打开才可以使用，如 [http://localhost:8080/test\_history.html](http://localhost:8080/test_history.html)
-
-如果直接打开是没有效果的。
+> 注意，如果直接打开静态页面[ file:///C:/Users/lizhaohong/Desktop/test\_history.html](file:///C:/Users/lizhaohong/Desktop/test_history.html) 是没有效果的。
+>
+> 必须在服务器部署的环境下打开才可以使用，如 [http://localhost:8080/test\_history.html](http://localhost:8080/test_history.html)
 
 ```js
 <!DOCTYPE html>
