@@ -137,18 +137,15 @@ export default class MyRouter extends React.Component {
 ```js
 export default class UserLogin extends React.Component {
     constructor (props) {
-        console.log(props);
         super(props)
     }
     render () {
         return <div>
-            
-                <button onClick = {() => {
-                   console.log(this.props)
-                }}>
-                    登录
-                </button>
-            </div>
+            <button onClick = {() => {
+               console.log(this.props)
+            }}>
+                登录
+            </button>
         </div>
     }
 }
