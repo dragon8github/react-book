@@ -63,8 +63,11 @@ ReactDOM.render(
     <InfoDetail Store = {store}/>, 
     document.getElementById('root')
 )
-
 ```
+
+![](/assets/asdasdasxzcxzqwe213123.png)
+
+---
 
 
 
