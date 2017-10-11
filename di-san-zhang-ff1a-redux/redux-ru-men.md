@@ -12,15 +12,15 @@ Redux 和 React 本身没有任何关系，任何框架甚至不使用框架也�
 $ yarn add redux
 ```
 
-redux/InfoReduce.js
+redux/newsReduce.js
 
 ```js
-let info = {
+let newsData = {
     title    : '测试新闻标题',
     clicknum : 0
 }
 
-export default (state = info, action) => {
+export default (state = newsData, action) => {
     switch (action.type) {
         case 'INCREMENT':
             return Object.assign({}, state, { clicknum : state.clicknum + 1 })
@@ -38,9 +38,9 @@ main.js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
-import InfoReduce from './redux/InfoReduce'
+import NewsReduce from './redux/NewsReduce'
 
-let store = createStore(InfoReduce)
+let store = createStore(NewsReduce)
 
 class InfoDetail extends React.Component {
     constructor (props) {
@@ -64,6 +64,7 @@ ReactDOM.render(
     <InfoDetail Store = {store}/>, 
     document.getElementById('root')
 )
+
 ```
 
 ![](/assets/asdasdasxzcxzqwe213123.png)
