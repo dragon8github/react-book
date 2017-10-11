@@ -21,7 +21,7 @@
 * [父子组件 与 嵌套组件](di-erzhang-ff1a-react-jin-jie/fu-zi-zu-jian-yu-qian-tao-zu-jian.md)
 * [React 路由](di-erzhang-ff1a-react-jin-jie/lu-you.md)
 * [React 路由参数 和 exact](di-erzhang-ff1a-react-jin-jie/react-lu-you-can-shu-he-exact.md)
-* [路由的原理：history模式和hash模式](di-erzhang-ff1a-react-jin-jie/jie-hong-lu-you-de-yuan-li-ff1a-history-mo-shi-he-hash-mo-shi.md)
+* [路由的原理：history模式 和 hash模式](di-erzhang-ff1a-react-jin-jie/jie-hong-lu-you-de-yuan-li-ff1a-history-mo-shi-he-hash-mo-shi.md)
 
 ## 第三章：react native
 
