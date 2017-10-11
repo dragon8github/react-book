@@ -88,5 +88,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 ![](/assets/hashroutersdadasdas.png)
 
-我们惊奇的发现，在Hash模式下，刷新页面是可以继续预览的。当然这和锚点\#是有关系的。所以我们通常建议使用Hash模式投入到生产环境中。
+我们惊奇的发现，在Hash模式下，刷新页面是可以继续预览的。而不会出现404界面。
+
+当然这和锚点\#是有关系的。所以我们通常建议使用Hash模式投入到生产环境中。
 
