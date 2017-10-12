@@ -74,9 +74,9 @@ ReactDOM.render(
 
 1、只要有属性传入组件，请养成使用 `constructor (props) { super(props) }`的习惯，这样做的好处是方便在组件中直接使用this.props来调用传入的属性。
 
-2、dispatch action 必须返回一个新的对象，常用的做法是使用object.assgin\({}, obj1, obj2...\)
+2、action 必须返回一个新的对象，常用的做法是使用 Object.assgin\({}, obj1, obj2...\) 重新生产一个对象。
 
 3、在实战中，都是将 Store 作为属性传入组件中使用的`<InfoDetail Store = {store}/>`
 
-4、通过 Store.subscribe\(cb\) 方法订阅 Store 的更新事件。在此 Demo 中，每次更新我们都使用 forceUpdate\(\) 重新渲染 render\(\) .它和 setState\(\) 功能十分相似。值得一提的是，由于是订阅，只要Store一旦更新，它就会持续的触发我们绑定的函数。是一种会持续且不断触发的事件。
+4、通过 Store.subscribe\(cb\) 方法订阅 Store 的更新事件。在此 Demo 中，每次 Store 中的 State 更新，我们都使用 forceUpdate\(\) 重新渲染 render\(\) ，它和 setState\({}\) 功能十分相似。
 
