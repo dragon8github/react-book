@@ -1,6 +1,8 @@
 redux-saga 作为 redux-thunk的代替品。它提供了生成器函数的方式来进行异步请求。
 
-复杂度比thunk更高。但也是一种热门的中间件。需要掌握一下
+复杂度比thunk更高。但也是一种热门的中间件。需要掌握一下。
+
+代码依然是基于 [&lt;实战：点赞&gt;](https://dragon8github.gitbooks.io/react/content/di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.html)
 
 传送门
 
@@ -14,7 +16,7 @@ redux-saga 作为 redux-thunk的代替品。它提供了生成器函数的方式
 $ yarn add redux-saga
 ```
 
-修改main.js， 使redux集成 redux-saga
+修改main.js， 使redux 集成 redux-saga
 
 ```js
 import React from 'react'
