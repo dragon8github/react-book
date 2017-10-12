@@ -44,7 +44,7 @@ ReactDOM.render(
 )
 ```
 
-添加 redux/actions.js
+添加 redux/actions.js，添加我们的异步代码
 
 ```js
 import axios from 'axios'
