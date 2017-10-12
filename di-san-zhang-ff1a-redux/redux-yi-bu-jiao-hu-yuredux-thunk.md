@@ -126,11 +126,9 @@ let store = createStore(NewsReduce, applyMiddleware(thunk))
 
 2、整个过程其实比较容易理解。
 
-> 正常同步流程：
+> 同步流程：
 >
-> 创建store -&gt; 监听store state变化并绑定回调函数 -&gt; 定义各种Action用于更新state -&gt; 通过store.dispatch 触发指定的Action -&gt; 某个Action被调用，store state更新 -&gt; 监听到store state发生变化，调用我们绑定的回调函数 -&gt; Finish!!!!
-
-
+> 创建store -&gt; 监听store state变化事件并绑定回调函数 -&gt; 定义各种Action，用于更新state / 返回state  -&gt;  通过store.dispatch 触发指定的Action -&gt; 某个Action被调用，store state更新 -&gt; 监听到store state发生变化，调用我们绑定的回调函数 -&gt; Finish!!!!
 
 
 
