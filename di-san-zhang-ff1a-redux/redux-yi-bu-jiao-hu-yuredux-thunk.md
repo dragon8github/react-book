@@ -4,6 +4,10 @@
 $ yarn add redux-thunk
 ```
 
+本节课使用 redux 来实现点赞功能。环境和代码大部分继承于 [《实战：点赞》](https://dragon8github.gitbooks.io/react/content/di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.html)，请先记得开启redis和phpstudy。
+
+---
+
 修改 main.js ，配置 redux-thunk 中间件
 
 ```js
@@ -38,7 +42,6 @@ ReactDOM.render(
     <InfoDetail Store = {store}/>, 
     document.getElementById('root')
 )
-
 ```
 
 添加 redux/actions.js
@@ -108,4 +111,26 @@ export default (state = newsData, action) => {
 ```
 
 ![](/assets/51125312124838321823.png)
+
+---
+
+### 知识点：
+
+1、注册 redux 中间件的方式特别简单。
+
+```
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+let store = createStore(NewsReduce, applyMiddleware(thunk))
+```
+
+2、整个过程其实比较容易理解。
+
+> 正常同步流程：
+>
+> 创建store -&gt; 监听store state变化并绑定回调函数 -&gt; 定义各种Action用于更新state -&gt; 通过store.dispatch 触发指定的Action -&gt; 某个Action被调用，store state更新 -&gt; 监听到store state发生变化，调用我们绑定的回调函数 -&gt; Finish!!!!
+
+
+
+
 
