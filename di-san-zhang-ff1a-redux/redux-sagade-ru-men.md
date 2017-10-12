@@ -16,7 +16,7 @@ redux-saga 作为 redux-thunk的代替品。它提供了生成器函数的方式
 $ yarn add redux-saga
 ```
 
-修改main.js， 使redux 集成 redux-saga
+修改main.js， 使 redux 集成 redux-saga，并对saga进行初始化
 
 ```js
 import React from 'react'
@@ -43,6 +43,7 @@ class InfoDetail extends React.Component {
              <h2>新闻标题: { this.S.getState().title }</h2>
              <span>当前点赞数: { this.S.getState().agreeNum }</span>
              <button onClick = { () => this.S.dispatch({type: "SAGA_001", newsid: 101}) }> 点赞 </button>
+             <button onClick = { () => this.S.dispatch({type: "SAGA_002", newsid: 101}) }> 获取当前点赞数 </button>
         </div>
    }
 }
@@ -50,7 +51,7 @@ class InfoDetail extends React.Component {
 ReactDOM.render(
     <InfoDetail Store = {store}/>, 
     document.getElementById('root')
-)
+) 
 ```
 
 新建 redux/NewsSaga.js
@@ -64,15 +65,26 @@ class NewsApi {
     static setAgreeAjax (newsid) {
         return axios.post('http://localhost:8080/news.php', qs.stringify({ newsid: newsid })).then(res => res.data.agree)
     }
+    static getAgreeAjax (newsid) {
+        return axios.get("http://localhost:8080/news.php", { params: { newsid: newsid }} ).then(res => res.data.agree)
+    }
 }
 
 export function* NewsSaga () {
+    // SAGA_001
     yield takeEvery("SAGA_001", function* (action) {
         // ajax
         let n = yield call(NewsApi.setAgreeAjax, action.newsid)
-
         // dispatch
         yield put({type: "SET_AGREE", agreeNum: n })
+    })
+
+    // SAGA_002
+    yield takeEvery("SAGA_002", function* (action) {
+        // ajax
+        let n = yield call(NewsApi.getAgreeAjax, action.newsid)
+        // dispatch
+        yield put({type: "GET_AGREE", agreeNum: n })
     })
 }
 ```
