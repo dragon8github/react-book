@@ -58,30 +58,33 @@ class UserAPI {
 }
 
 export function* UserSaga () {
-    // 定义任务，等待被调用
-    yield take('USER_LOGIN')
-    // 按钮不可用
-    yield put({type:"ACTIVE_CHANGE", btnDisabled:true});
-    // 获取state
-    const {userName, userPass} = yield select()
-    // ajax登录
-    const { token }  = yield call(UserAPI.userLogin, userName, userPass)
-    // 代表用户登录成功
-    if (token && token != 'none') {
-        // 通知修改 isLogin 标识
-        yield put({type: 'LOGIN_SUCCESS'})
-        // ajax获取用户等级
-        const { level } = yield call(UserAPI.getUserLevel, token)
-        // 用户等级获取成功
-        if (level && level != 'none') {
-            yield put({type: 'UPDATE_USERLEVEL', level})
-        // 用户等级获取失败
+    // 如果没有while(true) 那么只能执行一次。这是生成器函数的特性导致的
+    while (true) {
+        // 定义任务，等待被调用
+        yield take('USER_LOGIN')
+        // 按钮不可用
+        yield put({type: 'ACTIVE_CHANGE', btnDisabled: true})
+        // 获取state
+        const {userName, userPass} = yield select()
+        // ajax登录
+        const { token }  = yield call(UserAPI.userLogin, userName, userPass)
+        // 代表用户登录成功
+        if (token && token != 'none') {
+            // 通知修改 isLogin 标识
+            yield put({type: 'LOGIN_SUCCESS'})
+            // ajax获取用户等级
+            const { level } = yield call(UserAPI.getUserLevel, token)
+            // 用户等级获取成功
+            if (level && level != 'none') {
+                yield put({type: 'UPDATE_USERLEVEL', level})
+            // 用户等级获取失败
+            } else {
+                yield put({type: 'UPDATE_USERLEVEL', level: '获取等级失败'})
+            }
+        // 代表登录失败
         } else {
-            yield put({type: 'UPDATE_USERLEVEL', level: '获取等级失败'})
+            yield put({type: 'LOGIN_ERROR'})
         }
-    // 代表登录失败
-    } else {
-        yield put({type: 'LOGIN_ERROR'})
     }
 }
 ```
@@ -96,7 +99,7 @@ export default (state = { btnDisabled: false, isLogin: false, mylevel: '' }, act
         case 'ACTIVE_CHANGE':
             return Object.assign({}, state, { btnDisabled: action.btnDisabled })
         case 'LOGIN_SUCCESS':
-            return Object.assign({}, state, { btnDisabled: false, islogin: true })
+            return Object.assign({}, state, { btnDisabled: false, isLogin: true })
         case 'LOGIN_ERROR':
             return Object.assign({}, state, { btnDisabled: false, isLogin: false })
         case 'LOGIN_OUT':
@@ -129,7 +132,10 @@ class UserLogin extends React.Component {
         this.S = this.props.Store
     }
     componentWillMount () {
-        this.S.subscribe(() => this.forceUpdate())
+
+        this.S.subscribe(() => {this.forceUpdate()
+            console.log(this.S.getState())
+        })
     }
     textChange (e, key) {
         this.S.dispatch({type: 'UPDATE_USERFORM', Form:{[key]: e.target.value }})
@@ -142,9 +148,10 @@ class UserLogin extends React.Component {
             <h2>用户登录</h2>
             <div><span>用 户 名：</span><input type = 'text'    onChange = { e => {this.textChange(e, 'userName')} }/></div>
             <div><span>密    码：</span><input type = 'passwod' onChange = { e => {this.textChange(e, 'userPass')} }/></div>
-            <div><span>状    态:</span><span> {this.S.getState().islogin ? '已经登录' : '未登录'}</span></div>
-            <div><span>用户等级:</span><span> {this.S.getState().islogin ? this.S.getState().mylevel : '没登录无等级'}</span></div>
-            <div><button disabled = { this.S.getState().btnDisabled } onClick = { this.userSubmit.bind(this) }> 点这里登录 </button></div>
+            <div><span>状    态:</span><span> { this.S.getState().isLogin ? '已经登录' : '未登录' }</span></div>
+            <div><span>用户等级:</span><span> { this.S.getState().isLogin ? this.S.getState().mylevel : '没登录无等级' }</span></div>
+            <div><button onClick = { this.userSubmit.bind(this) } disabled = { this.S.getState().btnDisabled } > 登录 </button></div>
+            <div><button onClick = { () => { this.S.dispatch({type: 'LOGIN_OUT'})} }> 注销 </button></div>
         </div>
     }
 }
@@ -153,6 +160,7 @@ ReactDOM.render(
     <UserLogin Store = { store }/>,
     document.getElementById('root')
 )
+
 ```
 
 ![](/assets/asdasdjndasjdasjidsajiasdijzxzcxczx765import.png)
