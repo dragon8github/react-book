@@ -1,3 +1,7 @@
+redux-saga 作为 redux-thunk的代替品。它提供了生成器函数的方式来进行异步请求。
+
+复杂度比thunk更高。但也是一种热门的中间件。需要掌握一下
+
 传送门
 
 > &lt;Redux-saga github&gt;：[https://github.com/redux-saga/redux-saga](https://github.com/redux-saga/redux-saga)
