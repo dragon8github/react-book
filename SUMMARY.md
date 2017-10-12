@@ -27,7 +27,7 @@
 ## 第三章：Redux
 
 * [Redux 入门](di-san-zhang-ff1a-redux/redux-ru-men.md)
-* Redux 异步交互 与 Redux-thunk
+* [Redux 异步交互 与 Redux-thunk](di-san-zhang-ff1a-redux/redux-yi-bu-jiao-hu-yuredux-thunk.md)
 
 ## 第四章：react native
 

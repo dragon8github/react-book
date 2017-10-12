@@ -64,7 +64,6 @@ ReactDOM.render(
     <InfoDetail Store = {store}/>, 
     document.getElementById('root')
 )
-
 ```
 
 ![](/assets/asdasdasxzcxzqwe213123.png)
@@ -73,7 +72,7 @@ ReactDOM.render(
 
 ### 知识点
 
-1、只要有属性传入组件，请养成使用 `constructor (props) { super(props) }`的习惯
+1、只要有属性传入组件，请养成使用 `constructor (props) { super(props) }`的习惯，这样做的好处是方便在组件中直接使用this.props来调用传入的属性。
 
 2、dispatch action 必须返回一个新的对象，常用的做法是使用object.assgin\({}, obj1, obj2...\)
 
