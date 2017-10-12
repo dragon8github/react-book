@@ -88,7 +88,7 @@ class UserLogin extends React.Component {
         this.S = this.props.Store
     }
     componentWillMount () {
-        this.S.subscribe(() => {this.forceUpdate() })
+        this.S.subscribe(() => {this.forceUpdate()})
     }
     textChange (e, key) {
         this.props.Store.dispatch({type: "UPDATE_USERFORM", Form:{[key]: e.target.value }})
