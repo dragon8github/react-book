@@ -4,7 +4,7 @@
 $ yarn add redux-thunk
 ```
 
-本节课使用 redux 来实现点赞功能。环境和代码大部分继承于 [《实战：点赞》](https://dragon8github.gitbooks.io/react/content/di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.html)，请先记得开启redis和phpstudy。
+本节课使用 redux 来实现点赞功能。环境和代码大部分继承于 [《实战：点赞》](https://dragon8github.gitbooks.io/react/content/di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.html)，请先记得开启 redis 和 phpstudy
 
 ---
 
