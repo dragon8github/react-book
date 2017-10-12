@@ -54,11 +54,16 @@ class UserAPI {
 
 export function* UserSaga () {
    yield takeEvery('USER_LOGIN', function* (action) {
-         yield put({type : 'ACTIVE_CHANGE', btnDisabled : true})
-         const getState = yield select()
-         const result   = yield call(UserAPI.userLogin, getState.userName, getState.userPass)
-         alert(result.status)
-         yield put({type : 'ACTIVE_CHANGE', btnDisabled : false})
+        // 登录时，先使用 dispatch 通知 ACTIVE_CHANGE，关闭按钮
+        yield put({type : 'ACTIVE_CHANGE', btnDisabled : true})
+        // 获取state
+        const getState = yield select()
+        // ajax
+        const result   = yield call(UserAPI.userLogin, getState.userName, getState.userPass)
+        // 查看是否成功
+        alert(result.status)
+        // 异步完成， 再使用 dispatch 通知 ACTIVE_CHANGE，开启按钮
+        yield put({type : 'ACTIVE_CHANGE', btnDisabled : false})
     })
 }
 ```
