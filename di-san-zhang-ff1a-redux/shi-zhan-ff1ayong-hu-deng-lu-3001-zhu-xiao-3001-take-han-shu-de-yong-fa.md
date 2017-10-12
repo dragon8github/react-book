@@ -17,7 +17,7 @@ if (isset($_POST["user_name"]) && isset($_POST["user_pass"])) {
 
 	$get_userName = $_POST["user_name"];
 	$get_userPass = $_POST["user_pass"];
-	if($get_userName == "shenyi" && $get_userPass == "123") {
+	if ($get_userName == "shenyi" && $get_userPass == "123") {
 	
 		$result->message = "login success";
 		$result->status  = "success";
