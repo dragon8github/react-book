@@ -29,6 +29,7 @@
 * [Redux 入门](di-san-zhang-ff1a-redux/redux-ru-men.md)
 * [Redux 异步交互 与 Redux-thunk](di-san-zhang-ff1a-redux/redux-yi-bu-jiao-hu-yuredux-thunk.md)
 * [Redux 异步交互 与 Redux-saga](di-san-zhang-ff1a-redux/redux-sagade-ru-men.md)
+* [实战：使用 Redux-saga 登录](di-san-zhang-ff1a-redux/shi-zhan-ff1a-shi-yong-redux-saga-deng-lu.md)
 
 ## 第四章：react native
 
