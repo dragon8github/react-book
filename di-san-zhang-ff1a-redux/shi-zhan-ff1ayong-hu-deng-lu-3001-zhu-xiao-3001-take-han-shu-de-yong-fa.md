@@ -18,10 +18,9 @@ if (isset($_POST["user_name"]) && isset($_POST["user_pass"])) {
 	$get_userName = $_POST["user_name"];
 	$get_userPass = $_POST["user_pass"];
 	if ($get_userName == "shenyi" && $get_userPass == "123") {
-	
 		$result->message = "login success";
 		$result->status  = "success";
-        $result->token   = "0ab7f9aa-e246-4359-aee9-8b67fd5dc3f3"
+        	$result->token   = "0ab7f9aa-e246-4359-aee9-8b67fd5dc3f3"
 	}
 }
 
