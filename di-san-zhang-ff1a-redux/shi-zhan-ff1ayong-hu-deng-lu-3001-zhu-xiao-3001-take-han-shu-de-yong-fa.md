@@ -31,14 +31,11 @@ exit(json_encode($result));
 header('Access-Control-Allow-Origin:*');  
 header('Access-Control-Allow-Methods:GET,POST');  
 header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
-
 $result = new stdClass();
 $result->level = "none";
-
 if (isset($_POST["token"]) && $_POST["token"] == "0ab7f9aa-e246-4359-aee9-8b67fd5dc3f3") {
     $result->level = "黄金VIP";
 }
-
 header("content-type:application/json");
 exit(json_encode($result));
 ```
