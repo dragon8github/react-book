@@ -140,11 +140,11 @@ class UserLogin extends React.Component {
     render () {
         return <div>
             <h2>用户登录</h2>
-            <div><span>用户名：</span><input type = 'text'    onChange = { e => {this.textChange(e, 'userName')} }/></div>
-            <div><span>密  码：</span><input type = 'passwod' onChange = { e => {this.textChange(e, 'userPass')} }/></div>
-            <div><button disabled = { this.S.getState().btnDisabled } onClick = { this.userSubmit.bind(this) }> 点这里登录 </button></div>
+            <div><span>用 户 名：</span><input type = 'text'    onChange = { e => {this.textChange(e, 'userName')} }/></div>
+            <div><span>密    码：</span><input type = 'passwod' onChange = { e => {this.textChange(e, 'userPass')} }/></div>
             <div><span>状    态:</span><span> {this.S.getState().islogin ? '已经登录' : '未登录'}</span></div>
             <div><span>用户等级:</span><span> {this.S.getState().islogin ? this.S.getState().mylevel : '没登录无等级'}</span></div>
+            <div><button disabled = { this.S.getState().btnDisabled } onClick = { this.userSubmit.bind(this) }> 点这里登录 </button></div>
         </div>
     }
 }
