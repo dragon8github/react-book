@@ -16,7 +16,7 @@ redux是一个全局状态管理器。
 
 ---
 
-### 传送门
+传送门
 
 > &lt;Redux官网&gt;：[http://redux.js.org/](http://redux.js.org/)
 >
