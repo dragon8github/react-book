@@ -51,7 +51,7 @@ class InfoDetail extends React.Component {
 ReactDOM.render(
     <InfoDetail Store = {store}/>, 
     document.getElementById('root')
-) 
+)
 ```
 
 新建 redux/NewsSaga.js
@@ -110,4 +110,12 @@ export default (state = newsData, action) => {
 ```
 
 ![](/assets/daiiqjwiwijsadijdassaga.png)
+
+---
+
+### 知识点
+
+1、saga.run\(NewsSaga\) 中必须绑定一个生成器函数
+
+2、takeEvery第一个参数是一个自定义名称，用于被外部dispatch指定。第二个参数必须是一个生成器函数。
 
