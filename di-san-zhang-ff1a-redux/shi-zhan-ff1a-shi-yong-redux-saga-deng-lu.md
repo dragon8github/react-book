@@ -11,16 +11,16 @@ $result->message = "error username or password";
 $result->status = "error";
 if (isset($_POST["user_name"]) && isset($_POST["user_pass"])) {
 
-	$get_userName = $_POST["user_name"];
-	$get_userPass = $_POST["user_pass"];
-	if($get_userName == "shenyi" && $get_userPass == "123") {
-	
-		$result->message = "login success";
-		$result->status  = "success";
-	}
+    $get_userName = $_POST["user_name"];
+    $get_userPass = $_POST["user_pass"];
+    if($get_userName == "shenyi" && $get_userPass == "123") {
+
+        $result->message = "login success";
+        $result->status  = "success";
+    }
 }
 header("content-type:application/json");
-exit(json_encode($result));	 
+exit(json_encode($result));     
 ?>
 ```
 
@@ -118,5 +118,5 @@ ReactDOM.render(
 )
 ```
 
-
+![](/assets/successiajdij12izdhmmm.png)
 
