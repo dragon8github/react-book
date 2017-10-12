@@ -101,7 +101,7 @@ class UserLogin extends React.Component {
             <h2>用户登录</h2>
             <div><span>用户名：</span><input type = 'text' onChange = { e => {this.textChange(e, "userName")} }/></div>
             <div><span>密  码：</span><input type = 'text' onChange = { e => {this.textChange(e, "userPass")} }/></div>
-            <div><button disabled = {this.S.getState().btnDisabled} onClick = { this.userSubmit.bind(this) }> 点这里登录 </button></div>
+            <div><button disabled = { this.S.getState().btnDisabled } onClick = { this.userSubmit.bind(this) }> 点这里登录 </button></div>
         </div>
     }
 }
