@@ -77,7 +77,7 @@ export function* NewsSaga () {
 }
 ```
 
-redux/NewsReduce.js 不变
+redux/NewsReduce.js 保持不变
 
 ```js
 let newsData = {
