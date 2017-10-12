@@ -19,7 +19,7 @@
 ## 第二章：React进阶
 
 * [父子组件 与 嵌套组件](di-erzhang-ff1a-react-jin-jie/fu-zi-zu-jian-yu-qian-tao-zu-jian.md)
-* [React 路由](di-erzhang-ff1a-react-jin-jie/lu-you.md)
+* [React 路由入门](di-erzhang-ff1a-react-jin-jie/lu-you.md)
 * [React 路由参数 和 exact](di-erzhang-ff1a-react-jin-jie/react-lu-you-can-shu-he-exact.md)
 * [路由的原理：history模式 和 hash模式](di-erzhang-ff1a-react-jin-jie/jie-hong-lu-you-de-yuan-li-ff1a-history-mo-shi-he-hash-mo-shi.md)
 * [实战：登录](di-erzhang-ff1a-react-jin-jie/shi-zhan-ff1a-deng-lu.md)
