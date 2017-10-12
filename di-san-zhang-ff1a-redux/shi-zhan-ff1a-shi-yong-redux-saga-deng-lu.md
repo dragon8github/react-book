@@ -110,7 +110,6 @@ ReactDOM.render(
     <UserLogin Store = { store }/>,
     document.getElementById('root')
 )
-
 ```
 
 ![](/assets/successiajdij12izdhmmm.png)
@@ -120,6 +119,4 @@ ReactDOM.render(
 ### 知识点
 
 1、哪怕和 saga，thunk 融合，dispatch 也是可以通知到自定义在reduce.js中的action的。那如果saga.js 和 reduce.js 重复定义如何？答案是都会调用、先调用 reduce.js 的， 再调用saga.js的。
-
-2、
 
