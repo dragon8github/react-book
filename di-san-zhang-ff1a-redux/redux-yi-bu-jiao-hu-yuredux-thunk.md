@@ -124,9 +124,9 @@ import thunk from 'redux-thunk'
 let store = createStore(NewsReduce, applyMiddleware(thunk))
 ```
 
-2、整个过程其实比较容易理解。
+2、异步和同步的区别
 
-
+其实就是依赖 redux-thunk。先执行我们的异步代码，待执行完成后再次进行dispatch。
 
 3、整个redux的基本流程、使用步骤、基本套路
 
