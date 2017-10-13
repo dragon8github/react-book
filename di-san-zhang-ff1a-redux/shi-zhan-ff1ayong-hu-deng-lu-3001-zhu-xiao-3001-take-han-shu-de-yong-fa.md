@@ -57,6 +57,37 @@ class UserAPI {
     }
 }
 
+function* login () {
+    try {
+        // ajax登录
+        const { token }  = yield call(UserAPI.userLogin, userName, userPass)
+        // 代表用户登录成功
+        if (token && token != 'none') {
+            // 通知修改 isLogin 标识
+            yield put({type: 'LOGIN_SUCCESS'})
+            // ajax获取用户等级
+            const { level } = yield call(UserAPI.getUserLevel, token)
+            // 用户等级获取成功
+            if (level && level != 'none') {
+                yield put({type: 'UPDATE_USERLEVEL', level})
+            // 用户等级获取失败
+            } else {
+                yield put({type: 'UPDATE_USERLEVEL', level: '获取等级失败'})
+            }
+        // 代表登录失败
+        } else {
+            yield put({type: 'LOGIN_ERROR'})
+        }
+    } catch (e) {
+        // ...   
+    } finally {
+        if (yield cancelled()) {
+            console.log('任务被取消')
+            // ... 这里可以进行一些业务逻辑
+        }
+    }
+}
+
 export function* UserSaga () {
     // 如果没有while(true) 那么只能执行一次。这是生成器函数的特性导致的
     while (true) {
@@ -65,44 +96,20 @@ export function* UserSaga () {
         // 按钮不可用
         yield put({type: 'ACTIVE_CHANGE', btnDisabled: true})
         // 获取state
-        const {userName, userPass} = yield select()
+        const { userName, userPass } = yield select()
         // fork：不阻塞任务
-        const task_001 = yield fork(function* () {
-            try {
-                // ajax登录
-                const { token }  = yield call(UserAPI.userLogin, userName, userPass)
-                // 代表用户登录成功
-                if (token && token != 'none') {
-                    // 通知修改 isLogin 标识
-                    yield put({type: 'LOGIN_SUCCESS'})
-                    // ajax获取用户等级
-                    const { level } = yield call(UserAPI.getUserLevel, token)
-                    // 用户等级获取成功
-                    if (level && level != 'none') {
-                        yield put({type: 'UPDATE_USERLEVEL', level})
-                    // 用户等级获取失败
-                    } else {
-                        yield put({type: 'UPDATE_USERLEVEL', level: '获取等级失败'})
-                    }
-                // 代表登录失败
-                } else {
-                    yield put({type: 'LOGIN_ERROR'})
-                }
-            } catch (e) {
-                // ...   
-            } finally {
-                if (yield cancelled()) {
-                    console.log("cancelled")
-                    yield put({type: 'UPDATE_USERLEVEL', level: ''})
-                }
-            }
-        })
+        const task_001 = yield fork(login)
+
+        // ............................................................
+
         // 定义任务，等待被调用
         yield take('LOGIN_OUT')
         // 如果任务存在，那么取消任务
         if (task_001) {
-            yield cancel(task_001)     
+            // 尽可能的取消login的执行，并且会触发cancelled()
+            yield cancel(task_001)
         }
+        // 退出登录！
         yield put({type: 'LOGIN_OUT_DONE'})  
     }
 }
