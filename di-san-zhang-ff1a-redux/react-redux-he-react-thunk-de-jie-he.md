@@ -49,7 +49,7 @@ function NewsReduce(state = { newslist: [] }, action) {
     }
 }
 
-function NewsThunk() {
+function NewsThunk () {
     return function (dispatch, state) {
         axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch({type: 'GET_NEWS', getNews: res.data}))
     }
@@ -82,7 +82,7 @@ class TestNewsList extends React.Component {
             <h2>新闻列表</h2>
             <ul>
                 {
-                    getNewsList.map((item) => {
+                    getNewsList.map(item => {
                         return <li key = { item.newsid }> { item.title } </li>
                     })
                 }
