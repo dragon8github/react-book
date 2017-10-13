@@ -32,6 +32,7 @@
 * [实战：使用 Redux-saga 登录](di-san-zhang-ff1a-redux/shi-zhan-ff1a-shi-yong-redux-saga-deng-lu.md)
 * [实战：Redux-saga实现复杂的登录与注销、take函数的用法](di-san-zhang-ff1a-redux/shi-zhan-ff1ayong-hu-deng-lu-3001-zhu-xiao-3001-take-han-shu-de-yong-fa.md)
 * [React-Redux的初步使用](di-san-zhang-ff1a-redux/react-redux.md)
+* [React-Redux 和 React-thunk 的结合](di-san-zhang-ff1a-redux/react-redux-he-react-thunk-de-jie-he.md)
 
 ## 第四章：react native
 
