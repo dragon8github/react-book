@@ -9,21 +9,20 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');
 $redis = new Redis();
 $redis->connect("127.0.0.1", 6379);
 $result = '';
-   
+
 function sendReview($content) {
     global $redis;
     $redis->lpush("newsreview", $content);
     return $redis->lrange("newsreview", 0, 10);
 }
- 
+
 if (isset($_GET["review"]) && trim($_GET["review"]) != "") {
-	$result = sendReview($_GET["review"]);
+    $result = sendReview($_GET["review"]);
 } else {
-	$result = $redis->lrange("newsreview", 0, 10);
+    $result = $redis->lrange("newsreview", 0, 10);
 }
 
 exit(json_encode($result));
-
 ```
 
 所有内容堆积在main.js中，由于使用的是saga。所以复杂度和代码量会较高
@@ -85,7 +84,6 @@ function* add_review () {
     yield put({ type: 'REVIEW_LOAD_SUCCESS', reviewdata: result })
 }
 
-
 class TestReviewList extends React.Component {
     componentWillMount () {
         const { loadReview } = this.props
@@ -116,7 +114,6 @@ class TestReviewList extends React.Component {
         </div>
     }
 }
-
 
 function mapStateToProps (state) {
     return {
