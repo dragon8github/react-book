@@ -59,6 +59,8 @@ class UserAPI {
 
 function* login () {
     try {
+        // 获取state
+        const { userName, userPass } = yield select()
         // ajax登录
         const { token }  = yield call(UserAPI.userLogin, userName, userPass)
         // 代表用户登录成功
@@ -82,7 +84,7 @@ function* login () {
         // ...   
     } finally {
         if (yield cancelled()) {
-            // ... 这里可以进行一些业务逻辑操作
+             // ... 这里可以进行一些业务逻辑
             console.log('任务被取消')
         }
     }
@@ -95,8 +97,6 @@ export function* UserSaga () {
         yield take('USER_LOGIN')
         // 按钮不可用
         yield put({type: 'ACTIVE_CHANGE', btnDisabled: true})
-        // 获取state
-        const { userName, userPass } = yield select()
         // fork：不阻塞任务
         const task_001 = yield fork(login)
 
