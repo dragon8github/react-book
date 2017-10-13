@@ -54,17 +54,21 @@ export default (state = {title: 'my title', clicknum: 0 }, action) => {
 }
 ```
 
-这个函数一共做了三件重要的事情：
+这个函数一共做了三件重要的事情：
 
 **1、初始化state**
 
-    这很重要，因为在我们创建Store的时候，Redux会自动执行一遍该函数，试图根据函数的返回object，作为state的初始值。
+```
+这很重要，因为在我们创建Store的时候，Redux会自动执行一遍该函数，试图根据函数的返回object，作为state的初始值。
 
-    在这之后, 最新的state总会传入函数的第一参数中。
+在这之后, 最新的state总会传入函数的第一参数中。
+```
 
 **2、根据 action.type，定义或执行各种任务**
 
-    函数的第二参数action，实际是 Store.dispatch\(\) 传入的。如：
+```
+函数的第二参数action，实际是 Store.dispatch\(\) 传入的。如：
+```
 
 ```js
 Store.dispatch('INCREMENT', {title: "foo"});
@@ -74,9 +78,11 @@ Store.dispatch({type: 'DECREMENT', title: 'bar')};
 
 **3、返回并更新State**
 
-    一旦 `return`的object，就会自动替换并作为仓库最新的state。并且还会触发state更新的推送。
+    一旦 `return` 的object，就会自动替换并作为仓库最新的state。并且还会触发state更新的推送。
 
-    所以官方推荐使用Object.assgin\({}, state, {...}\) 的方式合并返回。
+    所以官方推荐使用 `Object.assgin({}, state, {...})` 的方式合并返回。
+
+
 
 ### 基本使用
 
