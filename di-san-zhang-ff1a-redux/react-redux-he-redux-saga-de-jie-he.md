@@ -85,11 +85,13 @@ function* add_review () {
 }
 
 class TestReviewList extends React.Component {
+    
     componentWillMount () {
         const { loadReview } = this.props
         // 第一次进入加载一次评论
         loadReview()
     }
+
     render () {
         const { reviewList, textChange, postReview } = this.props
         return <div>
