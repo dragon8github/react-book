@@ -78,11 +78,9 @@ Store.dispatch({type: 'DECREMENT', title: 'bar')};
 
 **3、返回并更新State**
 
-    一旦 **return** 的object，就会自动替换并作为仓库最新的state。并且还会触发state更新的推送。
+    一旦 return 的object，就会自动替换并作为仓库最新的state。并且还会触发state更新的推送。
 
-    所以官方推荐使用 **Object.assgin\({}, state, {...}\)** 的方式合并返回。
-
-
+    所以官方推荐使用 Object.assgin\({}, state, {...}\) 的方式合并返回。
 
 ### 基本使用
 
