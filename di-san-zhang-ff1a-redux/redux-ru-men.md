@@ -30,9 +30,53 @@ Redux 和 React 本身没有任何关系，任何框架甚至不使用框架也�
 
 ---
 
-### 定义和规范
+### Reduce是什么？
 
+```js
+// 创建一个仓库
+let Store = createStore(Reduce)
+```
 
+这里的 Reduce 是一个函数，正确来说，它就是一个仓库管理员。它是创建仓库的关键因素，我们来看一段实战代码：
+
+```js
+export default (state = {title: 'my title', clicknum: 0 }, action) => {
+    switch (action.type) {
+        case 'INCREMENT':
+            let a = state.clicknum
+            return Object.assign({}, state, { clicknum : a + 1, title: action.title })
+        case 'DECREMENT':
+            let b = state.clicknum
+            return Object.assign({}, state, { clicknum : b - 1, title: action.title }) 
+        default:
+            return state
+    }
+}
+```
+
+这个函数一共做了三件重要的事情：
+
+**1、初始化state**
+
+    这很重要，因为在我们创建Store的时候，Redux会自动执行一遍该函数，试图根据函数的返回object，作为state的初始值。
+
+    在这之后, 最新的state总会传入函数的第一参数中。
+
+**2、根据 action.type，定义或执行各种任务**
+
+    函数的第二参数action，实际是 Store.dispatch\(\) 传入的。如：
+
+```js
+Store.dispatch('INCREMENT', {title: "foo"});
+// 或者
+Store.dispatch({type: 'DECREMENT', title: 'bar')};
+```
+
+**3、返回并更新State**
+
+    一旦 `return`的object，就会自动替换并作为仓库最新的state。并且还会触发state更新的推送。
+
+    所以官方推荐使用Object.assgin\({}, state, {...}\) 的方式合并返回。
 
 ### 基本使用
 
@@ -45,7 +89,7 @@ Store.dispatch('type_name', {key: value})
 
 // 订阅状态更新
 Store.subscribe(() => {
-    // ...
+    // do something...
 })
 ```
 
