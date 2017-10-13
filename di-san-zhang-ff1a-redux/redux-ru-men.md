@@ -58,7 +58,7 @@ export default (state = {title: 'my title', clicknum: 0 }, action) => {
 
 **1、初始化state**
 
-这很重要，因为在我们创建Store的时候，Redux会自动执行一遍该函数，试图根据函数的返回object，作为state的初始值。
+这很重要，因为在我们创建Store的时候，Redux会自动执行一遍该函数，试图根据函数的返回object，作为state的初始值。
 
 在这之后, 最新的state总会传入函数的第一参数中。
 
@@ -74,9 +74,9 @@ Store.dispatch({type: 'DECREMENT', title: 'bar')};
 
 **3、返回并更新State**
 
+一旦 `return `的object，就会自动替换并作为仓库最新的state。并且还会触发state更新的推送。
 
-
-
+所以官方推荐使用` Object.assgin({}, state, {...})` 的方式合并返回。
 
 ---
 
