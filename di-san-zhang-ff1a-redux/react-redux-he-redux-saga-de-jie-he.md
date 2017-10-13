@@ -1,3 +1,31 @@
+新建测试用的后端php代码，我们使用了redis来代替数据库操作
+
+```php
+<?php
+header('Access-Control-Allow-Origin:*');  
+header('Access-Control-Allow-Methods:GET,POST');  
+header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
+
+$redis = new Redis();
+$redis->connect("127.0.0.1", 6379);
+$result = '';
+   
+function sendReview($content) {
+    global $redis;
+    $redis->lpush("newsreview", $content);
+    return $redis->lrange("newsreview", 0, 10);
+}
+ 
+if (isset($_GET["review"]) && trim($_GET["review"]) != "") {
+	$result = sendReview($_GET["review"]);
+} else {
+	$result = $redis->lrange("newsreview", 0, 10);
+}
+
+exit(json_encode($result));
+
+```
+
 所有内容堆积在main.js中，由于使用的是saga。所以复杂度和代码量会较高
 
 ```js
@@ -119,5 +147,5 @@ ReactDOM.render(
 )
 ```
 
-
+![](/assets/asdasdasjisjiadjiasdjidsajizxcimport.png)
 
