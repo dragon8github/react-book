@@ -82,8 +82,8 @@ function* login () {
         // ...   
     } finally {
         if (yield cancelled()) {
+            // ... 这里可以进行一些业务逻辑操作
             console.log('任务被取消')
-            // ... 这里可以进行一些业务逻辑
         }
     }
 }
@@ -91,7 +91,7 @@ function* login () {
 export function* UserSaga () {
     // 如果没有while(true) 那么只能执行一次。这是生成器函数的特性导致的
     while (true) {
-        // 定义任务，等待被调用。一旦被调用，就会执行下面的代码
+        // 定义【登录】任务，等待被调用。一旦被调用，就会执行下面的代码
         yield take('USER_LOGIN')
         // 按钮不可用
         yield put({type: 'ACTIVE_CHANGE', btnDisabled: true})
@@ -102,7 +102,7 @@ export function* UserSaga () {
 
         // ............................................................
 
-        // 定义任务，等待被调用
+        // 定义【注释】任务，等待被调用
         yield take('LOGIN_OUT')
         // 如果任务存在，那么取消任务
         if (task_001) {
