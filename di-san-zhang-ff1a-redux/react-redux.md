@@ -4,7 +4,9 @@ react-redux 提供了集成 Redux 中间件的新姿势。
 
 使用 mapStateToProps 和 mapDispatchToProps 将 Redux 的state 和 dispath 放入 组件的props中。
 
-这样做的好处是，state是自动更新的，而也无需订阅state的更新然后手动更新UI。
+这样做的好处是，不需要在constructor中去super继承。
+
+另一个好处是，state是自动更新的，而也无需订阅state的更新然后手动更新UI。
 
 ---
 
