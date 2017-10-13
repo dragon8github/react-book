@@ -1,0 +1,123 @@
+所有内容堆积在main.js中，由于使用的是saga。所以复杂度和代码量会较高
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore,applyMiddleware } from 'redux'
+import { Provider,connect} from 'react-redux'
+import createSaga from 'redux-saga'  
+import { call, put, takeEvery, select, take, fork, cancel, cancelled } from 'redux-saga/effects'
+import axios from 'axios'
+
+function ReviewReduce (state = { content: '', rlist: [] }, action) {
+    switch (action.type) {
+        // 评论框内容改变
+        case 'REVIEW_CONTENT_CHANGE':
+            return Object.assign({}, state, { content: action.content  })
+        // 加载或重新加载评论成功
+        case 'REVIEW_LOAD_SUCCESS':
+            return Object.assign({}, state, { rlist: action.reviewdata })
+        default:
+            return state
+    }
+}
+
+class ReviewAPI {
+    //第一次加载评论
+    static loadReview () {    
+       return axios.get('http://localhost:8080/review.php').then(res => res.data)
+    }
+    //发送评论
+    static postReview (content) {
+        return axios.get('http://localhost:8080/review.php?review=' + content).then(res => res.data)
+    }
+}
+
+function* Review_saga_load () {  
+  // 定义【加载评论】任务
+  const action = yield take('REVIEW_LOAD')
+  // ajax：得到评论的数据
+  const result = yield call(ReviewAPI.loadReview)
+  // dispatch：加载或重新加载评论成功
+  yield put({ type: 'REVIEW_LOAD_SUCCESS', reviewdata: result })
+}
+
+function* Review_saga_post () {
+    while (true) {
+        // 定义【提交评论】任务
+        const action= yield take('REVIEW_POST')
+        // ajax：提交评论
+        yield call(add_review)
+    }
+}
+
+function* add_review () {
+    const { content } = yield select()
+    const result      = yield call(ReviewAPI.postReview, content)
+    yield put({ type: 'REVIEW_LOAD_SUCCESS', reviewdata: result })
+}
+
+
+class TestReviewList extends React.Component {
+    componentWillMount () {
+        const { loadReview } = this.props
+        // 第一次进入加载一次评论
+        loadReview()
+    }
+    render () {
+        const { reviewList, textChange, postReview } = this.props
+        return <div>
+            <div className = 'newscontent'>
+                <h1>全球的开发新趋势调查</h1>
+                <article>在全球著名 IT 技术网站 Stack Overflow 上，我们可以基于该网站的开发者调查数据，了解全球的开发新趋势及动态。 Stack Overflow 分析了其网站上各编程语言的标签的访问情况： 发达国家程序员喜欢 Python、R（重视科研）、C 与 C++（重视教育）； 欠发达国家的喜欢 PHP 与 Android 开发 </article>
+            </div>
+            <h2>评论区域</h2>
+            <dl>
+                 <dt>输入评论内容</dt>
+                 <dd><textarea className='review' onChange = {e => { textChange(e) }}/></dd>
+                 <dd><input className = 'cmd' type = 'button' value = '提交'  onClick = { postReview }/></dd>
+            </dl>
+            <h3>评论列表区域</h3>
+            <ul>
+                {
+                    reviewList.map((item, index) => {
+                        return <li key = { index }> { item } </li>
+                    }
+                )}
+            </ul>
+        </div>
+    }
+}
+
+
+function mapStateToProps (state) {
+    return {
+        reviewList: state.rlist
+    }
+}
+
+function mapDispatchToProps (dispatch) { 
+    return{
+        textChange: e  => dispatch({ type: 'REVIEW_CONTENT_CHANGE', content: e.target.value }),
+        loadReview: () => dispatch({ type: 'REVIEW_LOAD' }),
+        postReview: () => dispatch({ type: 'REVIEW_POST' })
+    }
+}
+
+let saga  = createSaga()
+let store = createStore(ReviewReduce, applyMiddleware(saga))
+saga.run(Review_saga_load)
+saga.run(Review_saga_post)
+
+const App = connect(mapStateToProps, mapDispatchToProps)(TestReviewList)
+
+ReactDOM.render(
+    <Provider store = { store }>
+        <App/>
+    </Provider>,    
+    document.getElementById('root')
+)
+```
+
+
+
