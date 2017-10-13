@@ -1,4 +1,10 @@
-添加 Redux 中间件，用于拦截action
+reduce.js 中的 action 通常只负责同步的获取和更新state操作。而把异步操作放置在其他地方。等异步操作完成之后，再调用action进行同步操作。这是一种良好的约定规范，但也并非必须的，如果你硬要在action中进行异步操作也是可以的。
+
+而 redux-thunk 就是为了更好的遵循这种规范而产生的。他支持我们在使用dispatch的时候，传入一个（拥有异步操作的）函数并执行。这个（拥有异步操作的）函数会被传入 dispatch 和 state 两个redux的核心内容。在函数中完成异步操作之后，就可以使用该  dispatch 调用 action 了。
+
+---
+
+添加 Redux 中间件
 
 ```
 $ yarn add redux-thunk
@@ -127,8 +133,4 @@ let store = createStore(NewsReduce, applyMiddleware(thunk))
 2、异步和同步的区别
 
 其实就是依赖 redux-thunk。先执行我们的异步代码，待执行完成后再次进行dispatch。
-
-
-
-
 
