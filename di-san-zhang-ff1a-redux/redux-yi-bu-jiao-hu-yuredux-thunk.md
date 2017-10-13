@@ -128,23 +128,7 @@ let store = createStore(NewsReduce, applyMiddleware(thunk))
 
 其实就是依赖 redux-thunk。先执行我们的异步代码，待执行完成后再次进行dispatch。
 
-3、整个redux的基本流程、使用步骤、基本套路
 
-> **一、定义一个reduce.js文件，在这个文件中我们的目的有两个**
->
-> ①、定义和初始化状态； ②、定义各种各样的action方法，用于更新状态、获取状态
->
-> **二、以reduce为基础，创建一个store.**
->
-> 我们可以获取store中的状态，也可以调用store中的action方法。这个store就是我们与状态交互的中间人。在这个步骤可以加载redux中间件。
->
-> **三、监听store.state的变化，并且绑定我们的逻辑代码.**
->
-> 这样一来，一旦state发生变化。就会触发我们的逻辑代码。譬如在步骤二中，我们将store.state绑定在我们的控件中。一旦state发生变化。我们就需要重新渲染UI。重新绑定数据。这样一来，就产生所谓的双向数据绑定了。
->
-> **四、派发事件 store.dispatc.**
->
-> 正如步骤二所说，我们可以通过 store.dispatch 调用 store 中的 action 方法来更新状态或者获取状态。
 
 
 

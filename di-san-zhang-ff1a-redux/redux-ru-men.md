@@ -33,21 +33,14 @@ $ yarn add redux
 redux/newsReduce.js
 
 ```js
-let newsData = {
-    title    : '测试新闻标题',
-    clicknum : 0
-}
-
-export default (state = newsData, action) => {
+export default (state = {title: '测试新闻标题', clicknum: 0 }, action) => {
     switch (action.type) {
         case 'INCREMENT':
             let a = state.clicknum
-            a++
-            return Object.assign({}, state, { clicknum : a })
+            return Object.assign({}, state, { clicknum : a + 1 })
         case 'DECREMENT':
             let b = state.clicknum
-            b--
-            return Object.assign({}, state, { clicknum : b }) 
+            return Object.assign({}, state, { clicknum : b - 1 }) 
         default:
             return state
     }
@@ -100,5 +93,5 @@ ReactDOM.render(
 
 3、在实战中，都是将 Store 作为属性传入组件中使用的`<InfoDetail Store = {store}/>`
 
-4、通过 Store.subscribe\(cb\) 方法订阅 Store 的更新事件。在此 Demo 中，每次 Store 中的 State 更新，我们都使用 forceUpdate\(\) 重新渲染 render\(\) ，它和 setState\({}\) 功能十分相似。
+4、通过 Store.subscribe\(cb\) 方法订阅 Store 的更新事件。在此 Demo 中，每次 Store 中的 State 更新，我们都使用 forceUpdate\(\) 重新渲染 render\(\)
 
