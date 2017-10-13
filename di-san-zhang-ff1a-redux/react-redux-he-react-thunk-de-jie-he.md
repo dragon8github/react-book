@@ -22,8 +22,8 @@ $products =
 
 // 获取新闻列表
 if (isset($_GET["type"]) && $_GET["type"] == "news") 
-	exit($news);
-	
+    exit($news);
+
 // 默认获取商品列表
 exit($products);
 ```
@@ -49,6 +49,12 @@ function NewsReduce(state = {newslist: []}, action) {
     }
 }
 
+function NewsThunk() {
+    return function (dispatch, state) {
+        axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch({type: 'GET_NEWS', getNews: res.data}))
+    }
+}
+
 function mapStateToProps (state) {
     return {
         getNewsList: state.newslist
@@ -57,7 +63,9 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
     return {
-        loadNews: () => axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch({type: 'GET_NEWS', getNews: res.data}))
+        loadNews: () => {
+            dispatch(NewsThunk())
+        }
     }
 }
 
