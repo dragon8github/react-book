@@ -41,9 +41,13 @@ let newsData = {
 export default (state = newsData, action) => {
     switch (action.type) {
         case 'INCREMENT':
-            return Object.assign({}, state, { clicknum : state.clicknum + 1 })
+            let a = state.clicknum
+            a++
+            return Object.assign({}, state, { clicknum : a })
         case 'DECREMENT':
-            return Object.assign({}, state, { clicknum : state.clicknum - 1 }) 
+            let b = state.clicknum
+            b--
+            return Object.assign({}, state, { clicknum : b }) 
         default:
             return state
     }
