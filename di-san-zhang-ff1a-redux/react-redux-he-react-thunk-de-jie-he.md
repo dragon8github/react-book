@@ -40,7 +40,7 @@ import { Provider, connect } from 'react-redux'
 
 let store = createStore(NewsReduce, applyMiddleware(thunk))
 
-function NewsReduce(state = {newslist: []}, action) {
+function NewsReduce(state = { newslist: [] }, action) {
     switch (action.type) {
         case 'GET_NEWS':
             return Object.assign({}, state, { newslist: action.getNews })
