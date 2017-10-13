@@ -6,7 +6,7 @@ react-redux 提供了集成 Redux 中间件的新姿势。
 
 这样做的好处是，不需要在constructor中去super继承。
 
-另一个好处是，state是自动更新的，而也无需订阅state的更新然后手动更新UI。
+另一个好处是，UI是自动更新的，而也无需订阅state的更新然后手动更新UI。
 
 ---
 
