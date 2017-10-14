@@ -27,13 +27,14 @@
 ## 第三章：Redux
 
 * [Redux 入门](di-san-zhang-ff1a-redux/redux-ru-men.md)
-* [Redux 异步交互 ： Redux-thunk](di-san-zhang-ff1a-redux/redux-yi-bu-jiao-hu-yuredux-thunk.md)
+* [Redux 异步交互 ： Redux-Thunk](di-san-zhang-ff1a-redux/redux-yi-bu-jiao-hu-yuredux-thunk.md)
 * [Redux 异步交互 ： Redux-Saga](di-san-zhang-ff1a-redux/redux-sagade-ru-men.md)
 * [实战：使用 Redux-saga 登录](di-san-zhang-ff1a-redux/shi-zhan-ff1a-shi-yong-redux-saga-deng-lu.md)
 * [实战：使用 Redux-Saga 实现复杂的登录与注销、take函数的用法](di-san-zhang-ff1a-redux/shi-zhan-ff1ayong-hu-deng-lu-3001-zhu-xiao-3001-take-han-shu-de-yong-fa.md)
 * [React-Redux 的初步使用](di-san-zhang-ff1a-redux/react-redux.md)
-* [React-Redux 和 Redux-thunk 的结合](di-san-zhang-ff1a-redux/react-redux-he-react-thunk-de-jie-he.md)
+* [React-Redux 和 Redux-Thunk 的结合](di-san-zhang-ff1a-redux/react-redux-he-react-thunk-de-jie-he.md)
 * [React-Redux 和 Redux-Saga 的结合](di-san-zhang-ff1a-redux/react-redux-he-redux-saga-de-jie-he.md)
+* [Thunk + Saga + Router](di-san-zhang-ff1a-redux/thunk-+-saga-+-router.md)
 
 ## 第四章：react native
 
