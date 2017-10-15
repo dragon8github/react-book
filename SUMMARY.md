@@ -5,7 +5,7 @@
 * [简介](README.md)
 * [脚手架搭建](chapter1.md)
 
-## 第一章：React 基础
+## 第一章：React 入门基础
 
 * [元素](di-yi-zhang-ff1a-kai-shi/yuan-su.md)
 * [组件与属性](di-yi-zhang-ff1a-kai-shi/zu-jian.md)
@@ -17,24 +17,24 @@
 * [实战：点赞](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.md)
 * [实战：点赞之组件模块化](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan-zhi-zu-jian-mo-kuai-hua.md)
 
-## 第二章：React 路由
+## 第二章：React Router 路由
 
-* [React 路由入门](di-erzhang-ff1a-react-jin-jie/lu-you.md)
-* [React 路由参数 和 exact](di-erzhang-ff1a-react-jin-jie/react-lu-you-can-shu-he-exact.md)
+* [React Router 路由入门](di-erzhang-ff1a-react-jin-jie/lu-you.md)
+* [React Router 路由参数 和 exact](di-erzhang-ff1a-react-jin-jie/react-lu-you-can-shu-he-exact.md)
 * [路由的原理：history模式 和 hash模式](di-erzhang-ff1a-react-jin-jie/jie-hong-lu-you-de-yuan-li-ff1a-history-mo-shi-he-hash-mo-shi.md)
 * [实战：登录](di-erzhang-ff1a-react-jin-jie/shi-zhan-ff1a-deng-lu.md)
 
-## 第三章：Redux
+## 第三章：Redux 状态管理工具
 
 * [Redux 入门](di-san-zhang-ff1a-redux/redux-ru-men.md)
 * [Redux 异步交互 ： Redux-Thunk](di-san-zhang-ff1a-redux/redux-yi-bu-jiao-hu-yuredux-thunk.md)
 * [Redux 异步交互 ： Redux-Saga](di-san-zhang-ff1a-redux/redux-sagade-ru-men.md)
-* [实战：使用 Redux-saga 登录](di-san-zhang-ff1a-redux/shi-zhan-ff1a-shi-yong-redux-saga-deng-lu.md)
+* [实战：使用 Redux-Saga 登录](di-san-zhang-ff1a-redux/shi-zhan-ff1a-shi-yong-redux-saga-deng-lu.md)
 * [实战：使用 Redux-Saga 实现复杂的登录与注销、take函数的用法](di-san-zhang-ff1a-redux/shi-zhan-ff1ayong-hu-deng-lu-3001-zhu-xiao-3001-take-han-shu-de-yong-fa.md)
 * [React-Redux 的初步使用](di-san-zhang-ff1a-redux/react-redux.md)
 * [React-Redux 和 Redux-Thunk 的结合](di-san-zhang-ff1a-redux/react-redux-he-react-thunk-de-jie-he.md)
 * [React-Redux 和 Redux-Saga 的结合](di-san-zhang-ff1a-redux/react-redux-he-redux-saga-de-jie-he.md)
 * [Thunk + Saga + Router](di-san-zhang-ff1a-redux/thunk-+-saga-+-router.md)
 
-## 第四章：react native
+## 第四章：React Native 混合开发
 
