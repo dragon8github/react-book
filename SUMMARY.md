@@ -8,7 +8,7 @@
 ## 第一章：React 入门基础
 
 * [元素](di-yi-zhang-ff1a-kai-shi/yuan-su.md)
-* [组件与属性](di-yi-zhang-ff1a-kai-shi/zu-jian.md)
+* [组件 与 属性](di-yi-zhang-ff1a-kai-shi/zu-jian.md)
 * [事件](di-yi-zhang-ff1a-kai-shi/shi-jian.md)
 * [循环](di-yi-zhang-ff1a-kai-shi/xun-huan.md)
 * [state 与 组件的生命周期](di-yi-zhang-ff1a-kai-shi/state.md)
