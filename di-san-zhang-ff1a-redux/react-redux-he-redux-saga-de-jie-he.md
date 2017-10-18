@@ -25,7 +25,7 @@ if (isset($_GET["review"]) && trim($_GET["review"]) != "") {
 exit(json_encode($result));
 ```
 
-/main.js
+main.js
 
 ```js
 import React from 'react'
@@ -98,7 +98,7 @@ ReactDOM.render(
 )
 ```
 
-/redux/NewsReduce.js
+redux/NewsReduce.js
 
 ```js
 export const ReviewReduce = function (state = { content: '', rlist: [] }, action) {
@@ -115,7 +115,7 @@ export const ReviewReduce = function (state = { content: '', rlist: [] }, action
 }
 ```
 
-/redux/ReviewSaga.js
+redux/ReviewSaga.js
 
 ```js
 import { call, put, takeEvery, select, take, fork, cancel, cancelled } from 'redux-saga/effects'
