@@ -33,7 +33,6 @@ import ReactDOM from 'react-dom'
 import { createStore,applyMiddleware } from 'redux'
 import { Provider,connect} from 'react-redux'
 import createSaga from 'redux-saga'  
-import axios from 'axios'
 import { ReviewReduce } from './redux/ReviewReduce'
 import { Review_saga_load, Review_saga_post } from './redux/ReviewSaga'
 

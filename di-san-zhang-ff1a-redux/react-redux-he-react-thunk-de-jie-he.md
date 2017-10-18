@@ -34,7 +34,6 @@ main.js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import thunk from 'redux-thunk'
-import axios from 'axios'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider, connect } from 'react-redux'
 import NewsReduce from './redux/NewsReduce'
@@ -108,12 +107,12 @@ import qs from 'qs'
 
 export const NewsThunk = function () {
     return function (dispatch, state) {
-    
+
         axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch({
             type: 'GET_NEWS', 
             getNews: res.data
         }))
-        
+
         // 在大型项目中推荐使用这种方式管理
         // axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch(NewsAction.getNews(res.data)))
     }
