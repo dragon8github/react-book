@@ -25,7 +25,7 @@ if (isset($_GET["review"]) && trim($_GET["review"]) != "") {
 exit(json_encode($result));
 ```
 
-main.js
+/main.js
 
 ```js
 import React from 'react'
