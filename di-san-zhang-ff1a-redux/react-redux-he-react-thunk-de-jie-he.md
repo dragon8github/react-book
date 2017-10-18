@@ -28,7 +28,7 @@ if (isset($_GET["type"]) && $_GET["type"] == "news")
 exit($products);
 ```
 
-main.js，由于场景非常简单。大部分内容直接在本页完成。
+main.js
 
 ```js
 import React from 'react'
@@ -37,23 +37,11 @@ import thunk from 'redux-thunk'
 import axios from 'axios'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider, connect } from 'react-redux'
+import NewsReduce from './redux/NewsReduce'
+import { NewsThunk } from './redux/actions'
 
 let store = createStore(NewsReduce, applyMiddleware(thunk))
 
-function NewsReduce(state = { newslist: [] }, action) {
-    switch (action.type) {
-        case 'GET_NEWS':
-            return Object.assign({}, state, { newslist: action.getNews })
-        default:
-            return state
-    }
-}
-
-function NewsThunk () {
-    return function (dispatch, state) {
-        axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch({type: 'GET_NEWS', getNews: res.data}))
-    }
-}
 
 function mapStateToProps (state) {
     return {
@@ -70,12 +58,10 @@ function mapDispatchToProps (dispatch) {
 }
 
 class TestNewsList extends React.Component {
-
     componentWillMount () {
         const { loadNews } = this.props
         loadNews()
     }
-
     render () {
         const { getNewsList } = this.props
         return <div>
@@ -101,5 +87,46 @@ ReactDOM.render(
 )
 ```
 
+redux/NewsReduce.js
 
+```js
+export default (state = { newslist: [] }, action) => {
+    switch (action.type) {
+        case 'GET_NEWS':
+            return Object.assign({}, state, { newslist: action.getNews })
+        default:
+            return state
+    }
+}
+```
+
+redux/actions.js
+
+```js
+import axios from 'axios'
+import qs from 'qs'
+
+export const NewsThunk = function () {
+    return function (dispatch, state) {
+        axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch({
+            type: 'GET_NEWS', 
+            getNews: res.data
+        }))
+        // 在大型项目中推荐使用这种方式管理
+        // axios.get('http://localhost:8080/toplist.php?type=news').then(res => dispatch(NewsAction.getNews(res.data)))
+    }
+}
+
+// 在大型项目中推荐使用这种方式管理
+class NewsAction {
+    static getNews (n) {
+        return {
+            type: 'GET_NEWS',
+            getNews: n
+        }
+    }
+}
+```
+
+![](/assets/asdasdasdw355687okjhgbvy6.png)
 
