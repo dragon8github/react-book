@@ -49,7 +49,7 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) { 
-    return{
+    return {
         textChange: e  => dispatch({ type: 'REVIEW_CONTENT_CHANGE', content: e.target.value }),
         loadReview: () => dispatch({ type: 'REVIEW_LOAD' }),
         postReview: () => dispatch({ type: 'REVIEW_POST' })
