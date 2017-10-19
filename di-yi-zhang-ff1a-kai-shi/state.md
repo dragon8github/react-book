@@ -49,6 +49,14 @@ ReactDOM.render(
 > 相关文档：
 >
 > [https://reactjs.org/docs/react-component.html](https://reactjs.org/docs/react-component.html)
+>
+> https://reactjs.org/docs/react-component.html\#forceupdate
+>
+> orceUpdate就是重新render。有些变量不在state上，但是你又想达到这个变量更新的时候，刷新render；或者state里的某个变量层次太深，更新的时候没有自动触发render。这些时候都可以手动调用forceUpdate自动触发render。所以建议使用immutable来操作state，redux等flux架构来管理state。
+
+
+
+
 
 
 
