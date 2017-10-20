@@ -27,9 +27,9 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 import createHistory from 'history/createHashHistory'
 
 // redux-middleware
-import thunk from 'redux-thunk';
-import createSaga from 'redux-saga'  
-import { call, put, takeEvery, select, take, fork, cancel, cancelled } from 'redux-saga/effects'
+import thunk from 'redux-thunk'
+import createSaga from 'redux-saga'
+import { Review_saga_load, Review_saga_post } from './redux/ReviewSaga'
 
 // 第三方插件
 import axios from 'axios'
@@ -41,8 +41,9 @@ import { NewsReduce, ReviewReduce } from './redux/reducers'
 import NewsReview from './components/NewsReview'
 import NewsList   from './components/NewsList'
 
-const router_middleware = routerMiddleware(createHistory())
-
+const history = createHistory()
+const router_middleware = routerMiddleware(history)
+let saga = createSaga();
 const store = createStore(
     combineReducers({
         NewsReduce   : NewsReduce,
@@ -51,6 +52,8 @@ const store = createStore(
     }),
     applyMiddleware(router_middleware, thunk, saga)
 )
+saga.run(Review_saga_load)
+saga.run(Review_saga_post)
 
 ReactDOM.render(
     <Provider store = { store }>
@@ -71,18 +74,16 @@ ReactDOM.render(
 )
 ```
 
-新建/components/NewsReview.js
+新建 components/NewsReview.js
 
 ```js
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore,applyMiddleware } from 'redux'
-import { Provider,connect} from 'react-redux'
-import createSaga from 'redux-saga'  
+import { connect } from 'react-redux'
 
 function mapStateToProps (state) {
+    console.log(state)
     return {
-        reviewList: state.rlist
+        reviewList: state.ReviewReduce.rlist
     }
 }
 
@@ -129,18 +130,13 @@ class TestReviewList extends React.Component {
 const App = connect(mapStateToProps, mapDispatchToProps)(TestReviewList)
 
 export default App
-
 ```
 
 新建/components/NewsList.js
 
 ```js
 import React from 'react'
-import ReactDOM from 'react-dom'
-import thunk from 'redux-thunk'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider, connect } from 'react-redux'
-import { NewsThunk } from './../redux/actions'
+import { connect } from 'react-redux'
 import axios from "axios"
 
 // 本来应当放在 actions.js 中独立开来的, 但考虑到函数的数量少就省略了
@@ -155,7 +151,7 @@ function NewsThunk() {
 
 function mapStateToProps (state) {
     return {
-        getNewsList: state.newslist
+        getNewsList: state.NewsReduce.newslist
     }
 }
 
@@ -190,6 +186,76 @@ class TestNewsList extends React.Component {
 const App = connect(mapStateToProps, mapDispatchToProps)(TestNewsList)
 
 export default App
+```
+
+新建 redux/reducers.js
+
+```js
+// 新闻
+export const NewsReduce = function (state = { newslist : [] }, action)
+{
+   switch (action.type) {
+        case 'GET_NEWS':
+            return Object.assign({}, state, { newslist: action.getNews })
+        default:
+            return state
+    }
+}
+
+// 评论
+export const ReviewReduce = function (state = { content: '', rlist: [] }, action) {
+    switch (action.type) {
+        // 评论框内容改变
+        case 'REVIEW_CONTENT_CHANGE':
+            return Object.assign({}, state, { content: action.content  })
+        // 加载或重新加载评论成功
+        case 'REVIEW_LOAD_SUCCESS':
+            return Object.assign({}, state, { rlist: action.reviewdata })
+        default:
+            return state
+    }
+}
+```
+
+新建 redux/ReviewSaga.js
+
+```js
+import { call, put, takeEvery, select, take, fork, cancel, cancelled } from 'redux-saga/effects'
+import axios from 'axios'
+import qs from 'qs'
+
+class ReviewAPI {
+    //第一次加载评论
+    static loadReview () {    
+       return axios.get('http://localhost:8080/review.php').then(res => res.data)
+    }
+    //发送评论
+    static postReview (content) {
+        return axios.get('http://localhost:8080/review.php?review=' + content).then(res => res.data)
+    }
+}
+
+export const Review_saga_load = function* () {  
+  // 定义【加载评论】任务
+  const action = yield take('REVIEW_LOAD')
+  // ajax：得到评论的数据
+  const result = yield call(ReviewAPI.loadReview)
+  // dispatch：加载或重新加载评论成功
+  yield put({ type: 'REVIEW_LOAD_SUCCESS', reviewdata: result })
+}
+
+export const Review_saga_post = function* () {
+    while (true) {
+        // 定义【提交评论】任务
+        const action = yield take('REVIEW_POST')
+        // ajax：提交评论
+        yield call(function* () {
+            const { content } = yield select()
+            const result      = yield call(ReviewAPI.postReview, content)
+            yield put({ type: 'REVIEW_LOAD_SUCCESS', reviewdata: result })
+        })
+    }
+}
 ```
 
 
