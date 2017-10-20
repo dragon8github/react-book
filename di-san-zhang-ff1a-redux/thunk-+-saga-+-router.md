@@ -10,6 +10,34 @@
 $ yarn add react-router-redux history
 ```
 
+简单的后端redis操作，每次返回10条。
+
+```php
+<?php
+header('Access-Control-Allow-Origin:*');  
+header('Access-Control-Allow-Methods:GET,POST');  
+header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
+
+$redis = new Redis();
+$redis->connect("127.0.0.1", 6379);
+$result = '';
+   
+function sendReview($content) {
+    global $redis;
+    $redis->lpush("newsreview", $content);
+    return $redis->lrange("newsreview", 0, 10);
+}
+ 
+if (isset($_GET["review"]) && trim($_GET["review"]) != "") 
+	$result = sendReview($_GET["review"]);
+else 
+	$result = $redis->lrange("newsreview", 0, 10);
+
+exit(json_encode($result));
+```
+
+
+
 新建 router-index.js
 
 ```js
@@ -250,13 +278,13 @@ export const Review_saga_post = function* () {
         const action = yield take('REVIEW_POST')
         // ajax：提交评论
         yield call(function* () {
-            const { content } = yield select()
-            const result      = yield call(ReviewAPI.postReview, content)
+            const state  = yield select()
+            const result = yield call(ReviewAPI.postReview, state.ReviewReduce.content)
             yield put({ type: 'REVIEW_LOAD_SUCCESS', reviewdata: result })
         })
     }
 }
 ```
 
-
+![](/assets/balalaslalslasldasdas.png)
 
