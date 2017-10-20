@@ -14,7 +14,7 @@
 * [state 与 组件的生命周期](di-yi-zhang-ff1a-kai-shi/state.md)
 * [axios 与 ref](di-yi-zhang-ff1a-kai-shi/axios-yu-state.md)
 * [父子组件 与 嵌套组件](di-erzhang-ff1a-react-jin-jie/fu-zi-zu-jian-yu-qian-tao-zu-jian.md)
-* [实战：点赞](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.md)
+* [实战：点赞 与 redis安装](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.md)
 * [实战：点赞之组件模块化](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan-zhi-zu-jian-mo-kuai-hua.md)
 
 ## 第二章：React Router 路由

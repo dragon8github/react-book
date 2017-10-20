@@ -4,6 +4,8 @@
 
 window下使用redis，以及phpstudy如何添加redis的扩展，请参考以下教程
 
+**注意，是否为NTS版本、x64或x86 都可以在phpinfo\(\)中查到。尤其是后者不是根据你的电脑系统决定的。而是根据php决定的。安装重启，然后在i.php中查看模块是否存在，也可以在php.exe -m 查看 是否存在 redis和igbinary 扩展**
+
 > 《phpstudy + redis 搭建教程》： [http://blog.csdn.net/tianjingang1/article/details/68491369](http://blog.csdn.net/tianjingang1/article/details/68491369)
 >
 > 《php\_redis.dll 资源下载》：[http://windows.php.net/downloads/pecl/releases/redis/2.2.7/](http://windows.php.net/downloads/pecl/releases/redis/2.2.7/)
