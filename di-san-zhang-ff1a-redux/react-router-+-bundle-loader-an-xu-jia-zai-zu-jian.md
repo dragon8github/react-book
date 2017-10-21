@@ -16,10 +16,9 @@ components/c1.js 的代码
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-alert("我是测试组件:1号")
+alert("我是测试组件1号")
 
 class C1 extends  React.Component {
-
     render () {
         return <div>
             <h2>我是测试组件1号</h2>
@@ -36,10 +35,9 @@ components/c2.js 的代码
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-alert("我是测试组件:2号")
+alert("我是测试组件2号")
 
 class C1 extends  React.Component {
-
     render () {
         return <div>
             <h2>我是测试组件2号</h2>
@@ -59,6 +57,7 @@ import {HashRouter as Router, Route, Link } from 'react-router-dom'
 import C1 from './components/c1'
 import C2 from 'bundle-loader?lazy!./components/c2'
 
+// 异步组件Bundle
 class Bundle extends React.Component {
     constructor () {
        super()
