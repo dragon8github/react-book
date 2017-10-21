@@ -35,6 +35,7 @@
 * [React-Redux 和 Redux-Thunk 的结合](di-san-zhang-ff1a-redux/react-redux-he-react-thunk-de-jie-he.md)
 * [React-Redux 和 Redux-Saga 的结合](di-san-zhang-ff1a-redux/react-redux-he-redux-saga-de-jie-he.md)
 * [Thunk + Saga + Router](di-san-zhang-ff1a-redux/thunk-+-saga-+-router.md)
+* [React-Router + Bundle-Loader 按需加载组件](di-san-zhang-ff1a-redux/react-router-+-bundle-loader-an-xu-jia-zai-zu-jian.md)
 
 ## 第四章：React Native 混合开发
 
