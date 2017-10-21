@@ -288,10 +288,12 @@ export const Review_saga_post = function* () {
 
 ---
 
-神坑
+神坑与知识点![](/assets/xxxxxxxxxxxxxxxx.png)一直以为是哪个文件没有export。最后就是没有找出原因。经过一番调试，最后才知道是react-router-redux出现了问题。
+
+默认使用yarn add react-router-redux安装的版本是react-router-redux@4.0.8。需要换成react-router-redux@next 才可以。版本大概是react-router-redux@5.0.0-alpha.8
 
 ```
-cnpm install react-router-redux@next
+yarn add react-router-redux@next --save
 ```
 
 
