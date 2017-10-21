@@ -10,8 +10,6 @@
 yarn add bundle-loader --save
 ```
 
-先新建两个测试组件，c1/c2
-
 components/c1.js 的代码
 
 ```js
