@@ -2,7 +2,7 @@
 
 > &lt;bundle-loader&gt;
 >
-> https://github.com/webpack-contrib/bundle-loader
+> [https://github.com/webpack-contrib/bundle-loader](https://github.com/webpack-contrib/bundle-loader)
 
 安装
 
@@ -65,36 +65,23 @@ class Bundle extends React.Component {
     constructor () {
        super()
        this.state = {
-            mod: null
+            fuck: null
         }
     }
-    componentWillMount() {
-        C2(result => {
-            this.setState({
-                mod: result.default
-            })
-        })
+    componentWillMount () {
+        C2(result => this.setState({ fuck: result.default }))
     }
-    render() {
-        if (this.state.mod != null) {
-            return <this.state.mod />
-        }
-        else
-            return null
+    render () {
+        if (this.state.fuck != null) return <this.state.fuck />
+        else return null
     }
 }
 
-const C2_New = () => (
-    <Bundle load = { C2 }>
-    </Bundle>
-)
+// 异步组件Bundle
+const C2_Sync = () => <Bundle load = { C2 }> </Bundle>
 
 // 函数式组件定义
-function C3 () {
-    return <div>
-        <h2>我是3号组件</h2>
-    </div>
-}
+const C3  = () => <div><h2>我是3号组件</h2></div>
 
 ReactDOM.render(
     <Router>
@@ -105,7 +92,7 @@ ReactDOM.render(
                 <li><Link to = '/c3'> 测试   </Link></li>
             </ul>
             <Route exact path = '/'   component = { C1 }     />
-            <Route       path = '/c2' component = { C2_New } />
+            <Route       path = '/c2' component = { C2_Sync } />
             <Route       path = '/c3' component = { C3 }     />
         </div>
     </Router>,
@@ -114,4 +101,8 @@ ReactDOM.render(
 ```
 
 ![](/assets/啊实打实大三的567uythgfimport.png)
+
+我们发现，默认只弹出“我是测试组件1号”，只有点击了C2组件，才会弹出“我是测试组件2号”
+
+这说明了组件是在我们点击路由才加载的，也就是异步加载的。
 
