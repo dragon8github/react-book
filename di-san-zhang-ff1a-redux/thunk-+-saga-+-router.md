@@ -21,22 +21,20 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');
 $redis = new Redis();
 $redis->connect("127.0.0.1", 6379);
 $result = '';
-   
+
 function sendReview($content) {
     global $redis;
     $redis->lpush("newsreview", $content);
     return $redis->lrange("newsreview", 0, 10);
 }
- 
+
 if (isset($_GET["review"]) && trim($_GET["review"]) != "") 
-	$result = sendReview($_GET["review"]);
+    $result = sendReview($_GET["review"]);
 else 
-	$result = $redis->lrange("newsreview", 0, 10);
+    $result = $redis->lrange("newsreview", 0, 10);
 
 exit(json_encode($result));
 ```
-
-
 
 新建 router-index.js
 
@@ -287,4 +285,14 @@ export const Review_saga_post = function* () {
 ```
 
 ![](/assets/balalaslalslasldasdas.png)
+
+---
+
+神坑
+
+```
+cnpm install react-router-redux@next
+```
+
+
 
