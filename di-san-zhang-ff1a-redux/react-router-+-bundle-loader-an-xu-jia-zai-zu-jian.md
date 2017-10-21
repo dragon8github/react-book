@@ -88,9 +88,9 @@ ReactDOM.render(
                 <li><Link to = '/c2'> C2组件 </Link></li>
                 <li><Link to = '/c3'> 测试   </Link></li>
             </ul>
-            <Route exact path = '/'   component = { C1 }     />
+            <Route exact path = '/'   component = { C1 }      />
             <Route       path = '/c2' component = { C2_Sync } />
-            <Route       path = '/c3' component = { C3 }     />
+            <Route       path = '/c3' component = { C3 }      />
         </div>
     </Router>,
     document.getElementById('root')
