@@ -47,8 +47,8 @@ yarn add post-loader autoprefixer
 # react相关
 yarn add react react-dom
 yarn add react-router react-router-dom
-yarn add redux redux-thunk redux-saga@next react-redux 
-yarn add react-router-redux history 
+yarn add redux redux-thunk redux-saga react-redux 
+yarn add react-router-redux@next history 
 yarn add antd
 ```
 
