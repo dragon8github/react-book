@@ -32,10 +32,19 @@ yarn add axios
 # 添加webpack插件
 yarn add html-webpack-plugin
 yarn add webpack-dev-server
+yarn add extract-text-webpack-plugin
 
 # 添加babel插件
 yarn add babel-preset-react
-yarn add babel-loader babel-core
+yarn add babel-loader 
+yarn add babel-core
+
+# 添加webpack-loader
+yarn add style-loader 
+yarn add css-loader
+yarn add node-sass 
+yarn add sass-loader 
+yarn add url-loader
 ```
 
 创建目录结构
