@@ -1,4 +1,4 @@
-新建测试用的后端php代码，我们使用了redis来代替数据库操作
+新建review.php，测试用的后端php代码，我们使用了redis来代替数据库操作
 
 ```php
 <?php
