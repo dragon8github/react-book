@@ -23,33 +23,35 @@ yarn config set registry https://registry.npm.taobao.org
 # 初始化yarn
 yarn init -y
 
-# 添加核心库
-yarn add react react-dom webpack
-
-# 添加第三方库
-yarn add axios
+# 添加webpack
+yarn add webpack
 
 # 添加webpack插件
 yarn add html-webpack-plugin
 yarn add webpack-dev-server
 yarn add extract-text-webpack-plugin
 
-# 添加babel插件
-yarn add babel-preset-react
-yarn add babel-loader 
-yarn add babel-core
-
 # 添加webpack-loader
 yarn add style-loader css-loader node-sass sass-loader 
 yarn add url-loader
-yarn add post-loader autoprefixer
+yarn add file-loader
+yarn add postcss-loader autoprefixer
+
+# 添加babel插件
+yarn add babel-preset-react
+yarn add babel-loader babel-core
 
 # react相关
 yarn add react react-dom
 yarn add react-router react-router-dom
 yarn add redux redux-thunk redux-saga react-redux 
 yarn add react-router-redux@next history 
+
+# 蚂蚁金服的UI框架：Ant Design
 yarn add antd
+
+# 添加第三方库
+yarn add axios
 ```
 
 配置webpack.config.js
