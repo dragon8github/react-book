@@ -97,7 +97,7 @@ ReactDOM.render(
 )
 ```
 
-redux/NewsReduce.js
+redux/ReviewReduce.js
 
 ```js
 export const ReviewReduce = function (state = { content: '', rlist: [] }, action) {
