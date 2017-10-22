@@ -157,13 +157,15 @@ export const Review_saga_post = function* () {
 
 ![](/assets/asdasdasjisjiadjiasdjidsajizxcimport.png)
 
-
-
 知识点总结：
 
 1、如何给元素绑定onClick事件时传参？毕竟传参的话会执行该函数。
 
 **答案：箭头函数**
+
+```
+onClick = { () => postReview(this.textarea.value) }
+```
 
 2、dispatch调用saga的时候如何接收参数？
 
