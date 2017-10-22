@@ -49,9 +49,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) { 
     return {
-        textChange: e  => dispatch({ type: 'REVIEW_CONTENT_CHANGE', content: e.target.value }),
         loadReview: () => dispatch({ type: 'REVIEW_LOAD' }),
-        postReview: () => dispatch({ type: 'REVIEW_POST' })
+        postReview: v  => dispatch({ type: 'REVIEW_POST', content: v })
     }
 }
 
@@ -62,7 +61,7 @@ class TestReviewList extends React.Component {
     }
     render () {
 
-        const { reviewList, textChange, postReview } = this.props
+        const { reviewList, postReview } = this.props
 
         return <div>
             <div className = 'newscontent'>
@@ -72,8 +71,8 @@ class TestReviewList extends React.Component {
             <h2>评论区域</h2>
             <dl>
                  <dt>输入评论内容</dt>
-                 <dd><textarea className='review' onChange = {e => { textChange(e) }}/></dd>
-                 <dd><input className = 'cmd' type = 'button' value = '提交'  onClick = { postReview }/></dd>
+                 <dd><textarea className='review' ref = { e => this.textarea = e } /></dd>
+                 <dd><input className = 'cmd' type = 'button' value = '提交' onClick = { () => postReview(this.textarea.value) }/></dd>
             </dl>
             <h3>评论列表区域</h3>
             <ul>
@@ -143,12 +142,13 @@ export const Review_saga_load = function* () {
 
 export const Review_saga_post = function* () {
     while (true) {
-        // 定义【提交评论】任务
+        // 定义【提交评论】任务，这里的action 包含传递进来的参数
         const action= yield take('REVIEW_POST')
         // ajax：提交评论
         yield call(function* () {
-            const { content } = yield select()
-            const result      = yield call(ReviewAPI.postReview, content)
+            // 获取所有的state
+            const state = yield select()
+            const result = yield call(ReviewAPI.postReview, action.content)
             yield put({ type: 'REVIEW_LOAD_SUCCESS', reviewdata: result })
         })
     }
