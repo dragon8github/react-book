@@ -40,19 +40,9 @@ yarn add babel-loader
 yarn add babel-core
 
 # 添加webpack-loader
-yarn add style-loader 
-yarn add css-loader
-yarn add node-sass 
-yarn add sass-loader 
+yarn add style-loader css-loader node-sass sass-loader 
 yarn add url-loader
 yarn add post-loader autoprefixer
-```
-
-创建目录结构
-
-```ruby
-$ mkdir src && touch webpack.config.js .babelrc index.html
-$ cd src && touch main.js && mkdir assets components
 ```
 
 配置webpack.config.js
@@ -66,11 +56,6 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const autoprefixer = require('autoprefixer')
-
-
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
 
 module.exports = {
     entry: {
@@ -131,7 +116,7 @@ module.exports = {
               },
           },
           {
-              test: /\.(scss|sass)$/,
+              test: /\.(scss|sass|css)$/,
               use: ExtractTextPlugin.extract({
                   fallback: 'style-loader',
                   use: [
