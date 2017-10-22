@@ -12,7 +12,7 @@ Ant Design 传送门
 >
 > [https://ant.design/docs/react/introduce-cn](https://ant.design/docs/react/introduce-cn)
 
-根据官方指引，添加 babel-plugin-import 和 Ant Design 框架
+根据官方指引，添加` babel-plugin-import `和 `Ant Design` 框架，`babel-plugin-import`是用来按需加载 antd 的脚本和样式的
 
 ```js
 yarn add babel-plugin-import
