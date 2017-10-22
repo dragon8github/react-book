@@ -45,6 +45,7 @@ yarn add css-loader
 yarn add node-sass 
 yarn add sass-loader 
 yarn add url-loader
+yarn add post-loader autoprefixer
 ```
 
 创建目录结构
@@ -61,10 +62,11 @@ $ cd src && touch main.js && mkdir assets components
 > 只需要配置多个 entry 以及 多个 HtmlWebpackPlugin 即可构建多个页面。
 
 ```js
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-// https://github.com/webpack-contrib/extract-text-webpack-plugin
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -75,8 +77,8 @@ module.exports = {
         main: __dirname + '/src/main.js'
     },
     output: {
-        path: __dirname + '/dist/assets/',
-        filename: 'js/[name].js'
+        path: __dirname + '/dist',
+        filename: 'assets/js/[name].js'
     },
     devtool: 'source-map',
     module: {
@@ -129,11 +131,18 @@ module.exports = {
               },
           },
           {
-              test: /\.scss$/,
+              test: /\.(scss|sass)$/,
               use: ExtractTextPlugin.extract({
                   fallback: 'style-loader',
                   use: [
                     { loader: 'css-loader' },
+                    {
+                      loader: 'postcss-loader',
+                      options: {
+                        sourceMap: true,
+                        plugins: () => [autoprefixer({ browsers: ['iOS >= 7', 'Android >= 4.1'] })],
+                      },
+                    },
                     {
                        loader: 'sass-loader',
                        query: {
@@ -152,7 +161,7 @@ module.exports = {
             template: __dirname + '/index.html',
             chunks: ['main']
         }),
-        new ExtractTextPlugin('css/[name].css')
+        new ExtractTextPlugin('assets/css/[name].css')
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
