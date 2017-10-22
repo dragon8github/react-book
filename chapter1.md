@@ -43,6 +43,13 @@ yarn add babel-core
 yarn add style-loader css-loader node-sass sass-loader 
 yarn add url-loader
 yarn add post-loader autoprefixer
+
+# react相关
+yarn add react react-dom
+yarn add react-router react-router-dom
+yarn add redux redux-thunk redux-saga@next react-redux 
+yarn add react-router-redux history 
+yarn add antd
 ```
 
 配置webpack.config.js
