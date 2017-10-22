@@ -157,3 +157,28 @@ export const Review_saga_post = function* () {
 
 ![](/assets/asdasdasjisjiadjiasdjidsajizxcimport.png)
 
+
+
+知识点总结：
+
+1、如何给元素绑定onClick事件时传参？毕竟传参的话会执行该函数。
+
+**答案：箭头函数**
+
+2、dispatch调用saga的时候如何接收参数？
+
+**答案：分为takeEvery 和 take两种**
+
+```
+// 如果是takeEvery的话，就是这样
+yield takeEvery("SAGA_002", function* (action) { 
+    console.log(action)
+})
+
+// 如果是take的话，就是这样
+const action= yield take('REVIEW_POST')
+console.log(action)
+```
+
+
+
