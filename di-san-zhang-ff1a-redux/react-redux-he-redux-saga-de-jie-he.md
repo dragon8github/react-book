@@ -163,7 +163,7 @@ export const Review_saga_post = function* () {
 
 **答案：箭头函数**
 
-```
+```js
 onClick = { () => postReview(this.textarea.value) }
 ```
 
@@ -171,7 +171,7 @@ onClick = { () => postReview(this.textarea.value) }
 
 **答案：分为takeEvery 和 take两种**
 
-```
+```js
 // 如果是takeEvery的话，就是这样
 yield takeEvery("SAGA_002", function* (action) { 
     console.log(action)
