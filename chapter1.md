@@ -171,12 +171,12 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json'],
         alias: {
-            '@': path.resolve(__dirname, 'src'),
-            '@Actions': path.resolve(__dirname, 'src', 'Actions'),
-            '@Components': path.resolve(__dirname, 'src', 'Components'),
-            '@Api': path.resolve(__dirname, 'src', 'Api'),
-            '@Reduces': path.resolve(__dirname, 'src', 'Reduces'),
-            '@Sagas': path.resolve(__dirname, 'src', 'Sagas'),
+            '@'           : path.resolve(__dirname, 'src'),
+            '@Actions'    : path.resolve(__dirname, 'src', 'Actions'),
+            '@Components' : path.resolve(__dirname, 'src', 'Components'),
+            '@Api'        : path.resolve(__dirname, 'src', 'Api'),
+            '@Reduces'    : path.resolve(__dirname, 'src', 'Reduces'),
+            '@Sagas'      : path.resolve(__dirname, 'src', 'Sagas'),
         }
     },
     devtool: 'source-map'
