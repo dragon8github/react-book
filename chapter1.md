@@ -14,7 +14,7 @@ https://yarnpkg.com/zh-Hans/
 http://babeljs.io/docs/setup/#installation
 ```
 
-使用yarn安装必备库
+使用yarn安装必备库 
 
 ```py
 # 为了避免某些国外镜像源安装失败，先设置淘宝镜像代理
