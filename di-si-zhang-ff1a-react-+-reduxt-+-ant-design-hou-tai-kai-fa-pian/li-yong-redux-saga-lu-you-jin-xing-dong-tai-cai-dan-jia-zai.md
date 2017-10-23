@@ -223,9 +223,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
-import createHistory from 'history/createHashHistory'
 import { Provider } from 'react-redux'
 import createSaga from 'redux-saga'
+import createHistory from 'history/createHashHistory'
 import MenuReduce from '@Reduces/MenuReduce'
 import MenuSaga from '@Sagas/MenuSaga'
 import Layout_TSN from '@Components/layout/top_sider_nav'
@@ -248,7 +248,6 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 )
-
 ```
 
 ![](/assets/impasdasdasdasqweweqehghjghghghort.png)
