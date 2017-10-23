@@ -171,7 +171,10 @@ module.exports = {
 
 ```js
 {
-    "presets": ["react"]
+  "presets": ["react"],
+  "plugins": [
+        ["import", { "libraryName": "antd", "style": "css" }]
+  ]
 }
 ```
 
@@ -271,10 +274,7 @@ package.json
     "dev": "webpack-dev-server"
   }
 }
-
 ```
-
-
 
 
 
