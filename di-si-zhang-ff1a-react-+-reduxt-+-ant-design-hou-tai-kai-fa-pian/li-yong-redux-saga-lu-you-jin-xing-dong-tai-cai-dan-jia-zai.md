@@ -1,3 +1,5 @@
+webpack、babel、react 等环境搭建的配置请参考：[《脚手架搭建》](https://dragon8github.gitbooks.io/react/content/chapter1.html)
+
 新建Menu.php
 
 ```php
