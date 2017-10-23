@@ -117,3 +117,19 @@ ReactDOM.render(
 
 ![](/assets/aadsddddddasdasdasijijxzcjzicant.png)
 
+---
+
+知识点：
+
+```js
+// es6的语法
+const { SubMenu } = Menu
+
+// 等同于
+const SubMenu = Menu.SubMenu 
+```
+
+
+
+
+
