@@ -40,6 +40,7 @@
 ## 第四章：React+Reduxt+Ant Design后台开发篇
 
 * [第一个后台首页：引入Ant Design](di-si-zhang-ff1a-react-+-reduxt-+-ant-design-hou-tai-kai-fa-pian/di-yi-ge-hou-tai-shou-ye-ff1a-yin-ru-ant-design.md)
+* [利用Redux-Saga+路由进行动态菜单加载](di-si-zhang-ff1a-react-+-reduxt-+-ant-design-hou-tai-kai-fa-pian/li-yong-redux-saga-lu-you-jin-xing-dong-tai-cai-dan-jia-zai.md)
 
 ## 第五章：React Native 混合开发
 
