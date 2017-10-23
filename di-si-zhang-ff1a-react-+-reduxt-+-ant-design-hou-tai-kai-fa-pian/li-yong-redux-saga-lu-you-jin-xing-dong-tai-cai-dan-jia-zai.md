@@ -17,7 +17,6 @@ class Menu {
     public $icon = '';
     // 子菜单，是一个列表,必须初始化为一个空数组，否则前端会出错
     public $subMenu = []; 
-
     // 构造函数
     public function __construct($id, $n, $l, $icon = '') {
         $this->id   = $id;
@@ -58,6 +57,7 @@ export default {
 ```js
 import axios from 'axios'
 import config, { apiHost } from './ApiConfig'
+
 export default class MenuApi {
     static getMenuData () {
        return axios.get(apiHost + config.menu).then(result => result.data)
