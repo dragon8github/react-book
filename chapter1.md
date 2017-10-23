@@ -14,7 +14,7 @@ https://yarnpkg.com/zh-Hans/
 http://babeljs.io/docs/setup/#installation
 ```
 
-使用yarn安装必备库 
+使用yarn安装必备库
 
 ```py
 # 为了避免某些国外镜像源安装失败，先设置淘宝镜像代理
@@ -54,6 +54,53 @@ yarn add antd
 
 # 添加第三方库
 yarn add axios
+```
+
+package.json一览
+
+```js
+{
+  "name": "react-study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dragon8github/react-study.git",
+  "author": "dragon8github <928532756@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^2.13.6",
+    "autoprefixer": "^7.1.6",
+    "axios": "^0.17.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-import": "^1.6.2",
+    "babel-preset-react": "^6.24.1",
+    "bundle-loader": "^0.5.5",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "^1.1.5",
+    "history": "^4.7.2",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.8",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "next",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  }
+}
 ```
 
 配置webpack.config.js
@@ -244,53 +291,4 @@ npm run dev
 ---
 
 github地址： [https://github.com/dragon8github/react-study](https://github.com/dragon8github/react-study)
-
-package.json
-
-```js
-{
-  "name": "react-study",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/dragon8github/react-study.git",
-  "author": "dragon8github <928532756@qq.com>",
-  "license": "MIT",
-  "dependencies": {
-    "antd": "^2.13.6",
-    "autoprefixer": "^7.1.6",
-    "axios": "^0.17.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-import": "^1.6.2",
-    "babel-preset-react": "^6.24.1",
-    "bundle-loader": "^0.5.5",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.1",
-    "file-loader": "^1.1.5",
-    "history": "^4.7.2",
-    "html-webpack-plugin": "^2.30.1",
-    "node-sass": "^4.5.3",
-    "postcss-loader": "^2.0.8",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-router-redux": "next",
-    "redux": "^3.7.2",
-    "redux-saga": "^0.16.0",
-    "redux-thunk": "^2.2.0",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.0",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
-  },
-  "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server"
-  }
-}
-```
-
-
 
