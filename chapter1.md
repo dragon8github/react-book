@@ -216,7 +216,7 @@ module.exports = {
         port: 9000
     },
     resolve: {
-        extensions: ['.js', '.json'],
+        extensions: ['.js', '.json', '.scss'],
         alias: {
             '@'           : path.resolve(__dirname, 'src'),
             '@Actions'    : path.resolve(__dirname, 'src', 'Actions'),
