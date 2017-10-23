@@ -91,13 +91,13 @@ export default class CommonAction {
 ```js
 import actions from '@Actions/CommonAction'
 
-export default (state, action) => {
+export default (state = { data: [] }, action) => {
     switch (action.type) {
         // INIT_LOAD_MENU_SUCCESS
         case actions.LoadMenuSUCCESS().type:
             return Object.assign({}, state, { data: action.payload })
         default:
-            return { data: [] }
+            return state
     }
 }
 ```
@@ -210,7 +210,6 @@ function mapDispatchToProps (dispatch) {
 const App = connect(mapStateToProps, mapDispatchToProps)(Top_Sider_Nav)
 
 export default App
-
 ```
 
 main.js
