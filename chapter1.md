@@ -42,14 +42,14 @@ yarn add babel-preset-react
 yarn add babel-loader babel-core
 yarn add babel-plugin-import
 
-# react相关
+# 添加react相关
 yarn add react react-dom
 yarn add react-router react-router-dom
 yarn add redux redux-thunk redux-saga react-redux 
 yarn add react-router-redux@next history 
 yarn add bundle-loader
 
-# 蚂蚁金服的UI框架：Ant Design
+# 添加蚂蚁金服的UI框架：Ant Design
 yarn add antd
 
 # 添加第三方库
