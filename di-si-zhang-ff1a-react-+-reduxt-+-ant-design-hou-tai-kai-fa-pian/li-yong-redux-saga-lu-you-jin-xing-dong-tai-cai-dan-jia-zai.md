@@ -94,7 +94,7 @@ import actions from '@Actions/CommonAction'
 // 菜单Reduce
 export default function MenuReduce(state = { data: [] }, action) {
     // 加载菜单数据成功
-    if (action.type === actions.LoadMenuSUCCESS(null).type) {
+    if (action.type === actions.LoadMenuSUCCESS().type) {
         return Object.assign({}, state, { data: action.payload })
     }
     return state
