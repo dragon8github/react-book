@@ -111,7 +111,7 @@ import actions from '@Actions/CommonAction'
 import MenuApi from '@Api/MenuApi'
 
 export default function* () {
-    // 定义【加载菜单】任务
+    // 定义【 加载菜单 INIT_LOAD_MENU 】任务
     const action = yield take(actions.LoadMenu().type)
     // ajax
     const result = yield call(MenuApi.getMenuData)
@@ -196,6 +196,7 @@ class Top_Sider_Nav extends React.Component {
 
 function mapStateToProps (state) {
     return {
+        // @Reduces/MenuReduce.js
         menuList: state.MenuReduce.data
     }
 }
@@ -203,6 +204,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
     return {
         loadMenu: () => {
+            // @Sagas/MenuSaga.js
+            // INIT_LOAD_MENU
             dispatch(actions.LoadMenu())
         }
     }
@@ -211,6 +214,7 @@ function mapDispatchToProps (dispatch) {
 const App = connect(mapStateToProps, mapDispatchToProps)(Top_Sider_Nav)
 
 export default App
+
 ```
 
 main.js
