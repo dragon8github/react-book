@@ -19,7 +19,9 @@ yarn add babel-plugin-import
 yarn add antd
 ```
 
-.babelrc 修改 
+webpack的配置请参考：[《脚手架搭建》](https://dragon8github.gitbooks.io/react/content/chapter1.html)
+
+.babelrc 修改
 
 ```js
 {
