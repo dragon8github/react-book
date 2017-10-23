@@ -121,15 +121,22 @@ ReactDOM.render(
 
 知识点：
 
+1、快速获取对象的属性
+
 ```js
 // es6的语法
 const { SubMenu } = Menu
 
 // 等同于
-const SubMenu = Menu.SubMenu 
+const SubMenu = Menu.SubMenu
 ```
 
+2、组件原来还能这样用
 
+```
+<Menu.Item></Menu.Item>
+<Breadcrumb.Item></Breadcrumb.Item>
+```
 
-
+说明该类的某个静态方法返回了组件吧
 
