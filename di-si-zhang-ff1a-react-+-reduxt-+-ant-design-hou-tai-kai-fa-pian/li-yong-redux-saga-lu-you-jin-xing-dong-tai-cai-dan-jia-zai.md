@@ -193,14 +193,14 @@ class Top_Sider_Nav extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
     return {
         menuList: state.MenuReduce.data
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return{
+function mapDispatchToProps (dispatch) {
+    return {
         loadMenu: () => {
             dispatch(actions.LoadMenu())
         }
@@ -210,6 +210,7 @@ function mapDispatchToProps(dispatch) {
 const App = connect(mapStateToProps, mapDispatchToProps)(Top_Sider_Nav)
 
 export default App
+
 ```
 
 main.js
