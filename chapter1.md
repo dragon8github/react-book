@@ -31,7 +31,7 @@ yarn add html-webpack-plugin
 yarn add webpack-dev-server
 yarn add extract-text-webpack-plugin
 
-# 添加webpack-loader
+# 添加webpack-loader 
 yarn add style-loader css-loader node-sass sass-loader 
 yarn add url-loader
 yarn add file-loader
