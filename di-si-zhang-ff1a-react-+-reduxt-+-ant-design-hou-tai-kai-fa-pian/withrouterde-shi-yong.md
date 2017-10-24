@@ -6,8 +6,6 @@
 
 暂时想不透，先忽略这个问题吧。
 
-
-
 添加两个测试组件： addUser.js、listUser.js
 
 Components/addUser.js
@@ -53,7 +51,6 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
 import { withRouter } from 'react-router'
 import { connect }    from 'react-redux'
-import { Hoc }  from "@Components/Hoc"
 import actions  from '@Actions/CommonAction'
 import AddUser  from "@Components/user/addUser"
 import ListUser from "@Components/user/listUser"
