@@ -1,9 +1,3 @@
-> JSX 的基本语法规则：
->
-> 遇到 HTML 标签（以 &lt; 开头），就用 HTML 规则解析；
->
-> 遇到代码块（以 { 开头），就用 JavaScript 规则解析。
-
 jsx中是无法直接使用If-else语句的。通常先定义函数或者变量来使用。参考以下文章的方案一二：
 
 ```
@@ -83,5 +77,5 @@ return JSX标签时注意两点：
 }
 ```
 
-参考资料：http://blog.csdn.net/pcaxb/article/details/53927761
+参考资料：[http://blog.csdn.net/pcaxb/article/details/53927761](http://blog.csdn.net/pcaxb/article/details/53927761)
 
