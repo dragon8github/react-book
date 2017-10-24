@@ -2,7 +2,7 @@
 
 > 对于React中的循环渲染来说，**key**属性是必备的，否则会报警告。虽然也不会造成什么大的影响。
 >
-> 重点：我们发现，react会自动对数组进行遍历渲染。
+> 我们发现，react会自动对数组进行遍历渲染。
 
 ```js
 import React from 'react';
@@ -20,7 +20,8 @@ class Me extends React.Component
         return <div>    
             {
                 this.props.users.map((item, index) => {
-                    return <h2 key = {index}>{item.name}:{item.age}</h2>
+                    // 请注意这里的 return 仅仅是map的语法，
+                    return <h2 key = {index}>{item.name} : {item.age}</h2>
                 })
             }
         </div>
