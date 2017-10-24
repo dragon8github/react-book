@@ -4,7 +4,7 @@
 >
 > 遇到代码块（以 { 开头），就用 JavaScript 规则解析。
 
-jsx中是无法直接使用If-else语句的。通常会定义类函数或者变量来使用。参考以下链接的方案一、方案二：
+jsx中是无法直接使用If-else语句的。通常先定义函数或者变量来使用。参考以下文章的方案一二：
 
 ```
 http://blog.csdn.net/wmzy1067111110/article/details/51538241
@@ -71,7 +71,7 @@ return JSX标签时注意两点：
 
 2、如果 return 多行标签，记得套上一个 div 和 \(\)，毕竟div套上多少个也不会有所影响。这个也算JSX基础知识了。
 
-```
+```js
 {
     return (
         <div>
@@ -83,5 +83,5 @@ return JSX标签时注意两点：
 }
 ```
 
-
+参考资料：http://blog.csdn.net/pcaxb/article/details/53927761
 
