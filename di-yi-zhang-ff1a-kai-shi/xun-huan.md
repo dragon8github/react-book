@@ -20,7 +20,7 @@ class Me extends React.Component
         return <div>    
             {
                 this.props.users.map((item, index) => {
-                    // 请注意这里的 return 仅仅是map的语法，
+                    // 请注意这里的 return 仅仅是map的语法
                     return <h2 key = {index}>{item.name} : {item.age}</h2>
                 })
             }
