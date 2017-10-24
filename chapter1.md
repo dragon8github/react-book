@@ -48,6 +48,7 @@ yarn add react-router react-router-dom
 yarn add redux redux-thunk redux-saga react-redux 
 yarn add react-router-redux@next history 
 yarn add bundle-loader
+yarn add redux-auth-wrapper
 
 # 添加蚂蚁金服的UI框架：Ant Design
 yarn add antd
@@ -89,6 +90,7 @@ package.json一览
     "react-router-dom": "^4.2.2",
     "react-router-redux": "next",
     "redux": "^3.7.2",
+    "redux-auth-wrapper": "^2.0.2",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
