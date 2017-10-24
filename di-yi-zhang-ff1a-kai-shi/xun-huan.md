@@ -1,6 +1,8 @@
 使用map对数组进行遍历
 
 > 对于React中的循环渲染来说，**key**属性是必备的，否则会报警告。虽然也不会造成什么大的影响。
+>
+> 我们发现，react会自动对数组进行遍历渲染。
 
 ```js
 import React from 'react';
@@ -38,7 +40,6 @@ ReactDOM.render(
 使用for循环
 
 ```js
-
 class Test extends React.Component {
     render () {
         const { getCount, addInput } = this.props
