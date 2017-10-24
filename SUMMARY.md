@@ -7,7 +7,8 @@
 
 ## 第一章：React 入门基础
 
-* [元素](di-yi-zhang-ff1a-kai-shi/yuan-su.md)
+* [JSX：HTML元素](di-yi-zhang-ff1a-kai-shi/yuan-su.md)
+* [JSX： if-else 和 三元表达式](di-yi-zhang-ff1a-kai-shi/jsx-if-else-he-san-yuan-biao-da-shi.md)
 * [组件 与 属性](di-yi-zhang-ff1a-kai-shi/zu-jian.md)
 * [事件](di-yi-zhang-ff1a-kai-shi/shi-jian.md)
 * [循环](di-yi-zhang-ff1a-kai-shi/xun-huan.md)
@@ -15,7 +16,7 @@
 * [axios 与 ref](di-yi-zhang-ff1a-kai-shi/axios-yu-state.md)
 * [父子组件 与 嵌套组件](di-erzhang-ff1a-react-jin-jie/fu-zi-zu-jian-yu-qian-tao-zu-jian.md)
 * [实战：点赞 与 redis安装](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan.md)
-* [实战：点赞之组件模块化](di-yi-zhang-ff1a-kai-shi/shi-zhan-ff1a-dian-zan-zhi-zu-jian-mo-kuai-hua.md)
+* jsx if-else 和 三元表达式
 
 ## 第二章：React Router 路由
 
