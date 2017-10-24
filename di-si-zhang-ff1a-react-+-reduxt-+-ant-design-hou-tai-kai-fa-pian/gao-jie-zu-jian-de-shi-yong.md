@@ -1,7 +1,8 @@
+高阶组件的作用是能够尽可能的复用组件。
+
 main.js
 
 ```js
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -27,7 +28,7 @@ class Test extends React.Component {
 }
 
 function Hoc (mapStateToProps, mapDispatchToHandler) {
-    
+
     const props = Object.assign({}, mapStateToProps(), mapDispatchToHandler())
 
     return function (Component) {
