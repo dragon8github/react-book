@@ -27,7 +27,7 @@ ReactDOM.render(
 
 ---
 
-甚至支持直接通过大括号插入script脚本，但只支持表达式。
+甚至支持直接通过大括号插入script脚本。
 
 ```js
 import React from 'react';
