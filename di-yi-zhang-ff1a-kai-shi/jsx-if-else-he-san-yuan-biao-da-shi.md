@@ -65,5 +65,23 @@ http://blog.csdn.net/wmzy1067111110/article/details/51538241
 }
 ```
 
+return JSX标签时注意两点：
+
+1、只有函数才需要 return，如果是表达式是不需要return的，直接书写出标签就可以渲染了。这个要区分清楚，比如三元表达式或者 && 运算符
+
+2、如果 return 多行标签，记得套上一个 div 和 \(\)，毕竟div套上多少个也不会有所影响。这个也算JSX基础知识了。
+
+```
+{
+    return (
+        <div>
+            <Menu.Item key = '1'> nav 1 </Menu.Item>
+            <Menu.Item key = '2'> nav 2 </Menu.Item>
+            <Menu.Item key = '3'> nav 3 </Menu.Item>
+        </div>
+    )
+}
+```
+
 
 
