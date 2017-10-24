@@ -1,3 +1,76 @@
+新建userauth.php，模拟权限分配
+
+```php
+<?php
+header('Access-Control-Allow-Origin:*');  
+header('Access-Control-Allow-Methods:GET,POST');  
+header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
+class user {
+	// 用户ID写死为1001
+	public $user_id = 1001;	 
+	// 权限列表, 必须初始化为一个空数组, 否则前端会出错
+	public $permissions = []; 
+	// 构造函数
+	public function __construct($uid) {
+		$this->user_id = $uid;
+	}
+}
+
+// 一个无比简单的权限类
+class permission {
+   public $url;
+   public function __construct($url){
+		$this->url = $url;
+   }
+}
+
+$user = new User(1001);
+$per1 = new permission('/user/add');
+$user->permissions[] = $per1; 
+
+header('Content-type:application/json');
+exit(json_encode($user));
+```
+
+新建Components/Hoc.js，专门生产高阶函数
+
+```js
+import React from 'react'
+
+function MessageHoc (msg) {
+    // 这里的 message 是约定好的
+    const props = { message : msg }
+    return function (Abc) {
+        return class extends React.Component {
+            render () {
+                return <Abc {...props} />
+            }
+        }
+    }
+}
+
+export { 
+    MessageHoc
+}
+```
+
+新建Components/Error.js，专门用来跳转没有权限的页面
+
+```js
+import React from 'react'
+
+class BaseError extends React.Component {
+    render () {
+        const { message } = this.props
+        return <div>
+            <h3> { message } </h3>
+        </div>
+    }
+}
+
+export { BaseError }
+```
+
 main.js
 
 ```js
