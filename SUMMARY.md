@@ -9,9 +9,9 @@
 
 * [JSX：HTML元素](di-yi-zhang-ff1a-kai-shi/yuan-su.md)
 * [JSX： if-else 和 三元表达式](di-yi-zhang-ff1a-kai-shi/jsx-if-else-he-san-yuan-biao-da-shi.md)
+* [JSX循环：自动对数组遍历渲染](di-yi-zhang-ff1a-kai-shi/xun-huan.md)
 * [组件 与 属性](di-yi-zhang-ff1a-kai-shi/zu-jian.md)
 * [事件](di-yi-zhang-ff1a-kai-shi/shi-jian.md)
-* [循环](di-yi-zhang-ff1a-kai-shi/xun-huan.md)
 * [state 与 组件的生命周期](di-yi-zhang-ff1a-kai-shi/state.md)
 * [axios 与 ref](di-yi-zhang-ff1a-kai-shi/axios-yu-state.md)
 * [父子组件 与 嵌套组件](di-erzhang-ff1a-react-jin-jie/fu-zi-zu-jian-yu-qian-tao-zu-jian.md)
