@@ -41,7 +41,7 @@ $msgList = new Menu('1012', '站内信列表', '/msg/list');
 $msgMang->subMenu = [$msgAdd, $msgList];
 
 header('Content-type:application/json');
-exit(json_encode([$userMang,$msgMang]));
+exit(json_encode([$userMang, $msgMang]));
 ```
 
 新建Api/ApiConfig.js
@@ -123,11 +123,12 @@ export default function* () {
 新建Components/layout/top\_sider\_nav.js
 
 ```js
-import { Layout, Menu, Breadcrumb, Icon } from 'antd'
 import React from 'react'
 import { connect } from 'react-redux'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { Layout, Menu, Breadcrumb, Icon } from 'antd'
 import actions from '@Actions/CommonAction'
+
 const { SubMenu } = Menu
 const { Header, Content, Sider } = Layout
 
