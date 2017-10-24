@@ -1,6 +1,7 @@
 main.js
 
 ```js
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -10,6 +11,7 @@ class Test extends React.Component {
     }
     render () {
         const { title, datalist, showTest } = this.props
+
         return <div>
             <h2> { title } abc </h2>
             <ul>
@@ -25,7 +27,9 @@ class Test extends React.Component {
 }
 
 function Hoc (mapStateToProps, mapDispatchToHandler) {
+    
     const props = Object.assign({}, mapStateToProps(), mapDispatchToHandler())
+
     return function (Component) {
         return class extends React.Component {
             render () {
