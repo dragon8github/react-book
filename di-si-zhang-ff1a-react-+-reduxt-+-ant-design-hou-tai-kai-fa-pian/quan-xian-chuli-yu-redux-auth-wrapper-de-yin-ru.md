@@ -383,6 +383,8 @@ export default function* () {
 }
 ```
 
+> Main.js 主文件
+
 main.js
 
 ```js
@@ -420,8 +422,6 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
-
-
 
 ![](/assets/adsasdsadgghjhkjhgfhhkjhldjd.png)
 
