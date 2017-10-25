@@ -9,21 +9,21 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');
 sleep(2);
 
 class user {
-	// 用户ID写死为1001
-	public $user_id = 1001;	 
-	// 权限列表, 必须初始化为一个空数组, 否则前端会出错
-	public $permissions = []; 
-	// 构造函数
-	public function __construct($uid) {
-		$this->user_id = $uid;
-	}
+    // 用户ID写死为1001
+    public $user_id = 1001;     
+    // 权限列表, 必须初始化为一个空数组, 否则前端会出错
+    public $permissions = []; 
+    // 构造函数
+    public function __construct($uid) {
+        $this->user_id = $uid;
+    }
 }
 
 // 一个无比简单的权限类
 class permission {
    public $url;
    public function __construct($url){
-		$this->url = $url;
+        $this->url = $url;
    }
 }
 
@@ -34,6 +34,10 @@ $user->permissions[] = $per1;
 header('Content-type:application/json');
 exit(json_encode($user));
 ```
+
+---
+
+> Api系列
 
 新建Api/ApiConfig.js
 
@@ -72,6 +76,10 @@ export default class MenuApi {
 }
 ```
 
+---
+
+> Components系列
+
 新建Components/Hoc.js，专门生产高阶函数
 
 ```js
@@ -108,6 +116,40 @@ class BaseError extends React.Component {
 }
 
 export { BaseError }
+```
+
+添加Component/user/addUser.js
+
+```js
+import React from 'react'
+import { connect } from 'react-redux'
+
+class AddUser extends React.Component {
+    render () {
+        return <div>
+            <h3>新增用户</h3>
+        </div>
+    }
+}
+
+export default connect()(AddUser)
+```
+
+添加Component/user/listUser.js
+
+```js
+import React from 'react'
+import { connect } from 'react-redux'
+
+class ListUser extends React.Component {
+    render () {
+        return <div>
+            <h3>用户列表</h3>
+        </div>
+    }
+}
+
+export default connect()(ListUser)
 ```
 
 修改Component/layout/top\_sider\_nav.js
@@ -275,6 +317,10 @@ const App = connect(mapStateToProps, mapDispatchToProps)(Top_Sider_Nav)
 export default withRouter(App)
 ```
 
+---
+
+> Reduces 系列
+
 新建Reduces/MenuReduce.js
 
 ```js
@@ -300,6 +346,10 @@ export default (state = { data: [] }, action) => {
     }
 }
 ```
+
+---
+
+> Sagas 系列
 
 新建Sagas/AuthSaga.js
 
@@ -370,6 +420,8 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
+
+
 
 ![](/assets/adsasdsadgghjhkjhgfhhkjhldjd.png)
 
