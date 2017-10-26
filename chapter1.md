@@ -55,6 +55,7 @@ yarn add antd
 
 # 添加第三方库
 yarn add axios
+yarn add qs
 ```
 
 package.json一览
