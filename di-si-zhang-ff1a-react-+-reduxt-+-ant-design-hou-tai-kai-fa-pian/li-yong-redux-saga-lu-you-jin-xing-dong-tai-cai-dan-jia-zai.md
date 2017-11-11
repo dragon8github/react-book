@@ -1,4 +1,8 @@
+# 利用Redux-Saga + 路由进行动态菜单加载
+
 webpack、babel、react 等环境搭建的配置请参考：[《脚手架搭建》](https://dragon8github.gitbooks.io/react/content/chapter1.html)
+
+![](/assets/ fe062e24-3e59-47e4-9591-8a043beaea6aimport.png)
 
 新建Menu.php
 
