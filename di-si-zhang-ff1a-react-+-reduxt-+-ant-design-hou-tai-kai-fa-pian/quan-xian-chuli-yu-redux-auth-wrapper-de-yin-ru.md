@@ -1,3 +1,7 @@
+# 权限处理与 redux-auth-wrapper 的引入
+
+![](/assets/346ed6ad-5f44-49bd-b518-4e9c680ea03dimport.png)
+
 新建userauth.php，模拟权限分配
 
 ```php
