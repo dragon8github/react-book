@@ -40,7 +40,7 @@ class ListUser extends React.Component {
 export default connect()(ListUser)
 ```
 
-修改Components/layout/top\_sider\_nav.js
+修改Components/layout/top\_sider\_nav.js，使用 withRouter 来解决上述问题。
 
 ```js
 import React from 'react'

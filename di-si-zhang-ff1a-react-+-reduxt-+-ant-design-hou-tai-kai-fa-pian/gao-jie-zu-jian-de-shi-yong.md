@@ -1,12 +1,12 @@
-高阶组件的作用是能够尽可能的复用组件。
+高阶组件的作用，就是能够尽可能的复用组件。
 
-之前我们使用 import { connect } from 'react-redux' 
+![](/assets/ 71a3efa3-9fd1-4aa1-960f-a32632415aa2import.png)
+
+之前我们使用 import { connect } from 'react-redux'
 
 const App = connect\(mapStateToProps, mapDispatchToProps\)\(Top\_Sider\_Nav\)
 
-生成的App其实就是一个高阶组件。
-
-
+生成的其实就是一个高阶组件。
 
 main.js
 
