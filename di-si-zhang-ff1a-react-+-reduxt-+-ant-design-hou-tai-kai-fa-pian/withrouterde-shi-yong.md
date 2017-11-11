@@ -2,13 +2,11 @@
 
 原因是没有触动props变化，所以界面不会改变。withRouter 的使用可以解决这个问题。
 
-但依然存在一个问题，为什么我在最外围套上一个 &lt;Route&gt; 的话，一样可以解决这个问题呢？
+> 但依然存在一个问题，为什么我在最外围套上一个 &lt;Route&gt; 的话，一样可以解决这个问题呢？
+>
+> 暂时想不透，先忽略这个问题吧。
 
-暂时想不透，先忽略这个问题吧。
-
-添加两个测试组件： addUser.js、listUser.js
-
-Components/addUser.js
+添加组件1： Components/addUser.js
 
 ```js
 import React from 'react'
@@ -25,7 +23,7 @@ class AddUser extends React.Component {
 export default connect()(AddUser)
 ```
 
-Components/listUser.js
+添加组件2： Components/listUser.js
 
 ```js
 import React from 'react'
