@@ -1,3 +1,7 @@
+# 实战：使用 Redux-Saga 实现复杂的登录与注销、take函数的用法
+
+![](/assets/ 47bd5dae-6b8a-4821-8b2f-fa203b42eddeimport.png)
+
 新建user.php
 
 ```js

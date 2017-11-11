@@ -1,3 +1,7 @@
+#  Redux-Thunk是什么？
+
+![](/assets/996de0cb-e84a-4a99-af0c-78a1e6ed446aimport.png)
+
 Reduce 中的 action 通常只负责**同步**的获取和更新state操作。而把异步操作放置在其他地方。等异步操作完成之后，再调用 action 进行同步操作。这是一种良好的约定规范，但也并非必须的，如果你硬要在action中进行异步操作也是可以的。
 
 而 redux-thunk 就是为了更好的遵循这种规范而产生的。他支持我们在使用dispatch的时候，传入一个（拥有异步操作的）函数。这个函数会被传入 dispatch 和 state 。供我们在函数中使用，我们可以在函数完成异步操作之后，使用  dispatch 调用 action 。

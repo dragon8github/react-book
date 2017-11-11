@@ -1,3 +1,7 @@
+# Redux-Saga是什么？
+
+![](/assets/ 0bf20cb5-f24e-40dd-844a-a7563d6c0e76import.png)
+
 redux-saga 作为 redux-thunk的代替品。它提供了生成器函数的方式来进行异步请求。提供了更为复杂的业务操作
 
 学习曲线也比thunk高很多。但作为热门的Redux中间件。还是必须掌握一下的。

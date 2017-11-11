@@ -1,3 +1,7 @@
+# 实战：使用 Redux-Saga 登录
+
+![](/assets/46a49e3a-eb01-4d53-82b0-a1ce314c29abimport.png)
+
 新建user.php
 
 ```php
@@ -110,7 +114,6 @@ ReactDOM.render(
     <UserLogin Store = { store }/>,
     document.getElementById('root')
 )
-
 ```
 
 ![](/assets/successiajdij12izdhmmm.png)
